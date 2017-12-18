@@ -1,0 +1,133 @@
+[ 2017-12-15T23:29:22+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-15T23:29:22+08:00 ] 127.0.0.1 /index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.053003s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.053003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-15T23:29:26+08:00 ] 127.0.0.1 /index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_admin` [ RunTime:0.0990s ]
+SQL: SELECT * FROM `hyz_admin` WHERE `account` = 'admin' AND `pwd` = '062b654fbdf61f036860e9dd1a6789bd' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-15T23:29:28+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-15T23:29:29+08:00 ] 127.0.0.1 /index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.3740s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.2550s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-15T23:29:31+08:00 ] 127.0.0.1 /index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0780s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name F:\haoyunzhao-houtai\hyz-xiangmu\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-15T23:29:33+08:00 ] 127.0.0.1 /index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: name F:\haoyunzhao-houtai\hyz-xiangmu\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id F:\haoyunzhao-houtai\hyz-xiangmu\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

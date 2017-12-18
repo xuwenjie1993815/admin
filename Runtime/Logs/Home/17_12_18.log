@@ -1,0 +1,2050 @@
+[ 2017-12-18T20:23:33+08:00 ] 127.0.0.1 /www/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:23:33+08:00 ] 127.0.0.1 /www/index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:23:37+08:00 ] 127.0.0.1 /www/index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[HY000] [1045] Accès refusé pour l'utilisateur: 'root'@'@localhost' (mot de passe: OUI)
+
+[ 2017-12-18T20:25:56+08:00 ] 127.0.0.1 /www/index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `hyz_admin` WHERE `account` = 'admin' AND `pwd` = 'c8d32c2a41fc240a82ea6e2d1566e8ef' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:26:01+08:00 ] 127.0.0.1 /www/index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_admin` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `hyz_admin` WHERE `account` = 'admin' AND `pwd` = '0c3cc2b229a290c98e6b161a607f48d3' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:26:20+08:00 ] 127.0.0.1 /www/index.php/Home/Pub/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `hyz_admin` WHERE `account` = 'admin' AND `pwd` = '062b654fbdf61f036860e9dd1a6789bd' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:26:22+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-18T20:26:22+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:26:25+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:26+08:00 ] 127.0.0.1 /www/index.php/Home/Advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_advert` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_advert` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_advert` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\AdvertController.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:27+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T20:26:27+08:00 ] 127.0.0.1 /www/index.php/Home/Advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_advert` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_advert` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_advert` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\AdvertController.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:26:28+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T20:26:28+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:29+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T20:26:29+08:00 ] 127.0.0.1 /www/index.php/Home/Advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_advert` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_advert` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_advert` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\AdvertController.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:26:30+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/roleadmin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `hyz_role` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `hyz_role` ORDER BY id desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: item E:\admin\Runtime\Cache\Home\eb053667eff8fe54333ab81f0fdc1bca.php 第 38 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\eb053667eff8fe54333ab81f0fdc1bca.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:32+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `hyz_menu` ORDER BY sort  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 81 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:26:33+08:00 ] 127.0.0.1 /www/index.php/Home/Set/versionlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_version` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `hyz_version` ORDER BY id desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:33+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/roleadmin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_role` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `hyz_role` ORDER BY id desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: item E:\admin\Runtime\Cache\Home\eb053667eff8fe54333ab81f0fdc1bca.php 第 38 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\eb053667eff8fe54333ab81f0fdc1bca.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:34+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `hyz_menu` ORDER BY sort  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 81 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:26:40+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuAdd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info E:\admin\Runtime\Cache\Home\ea0570200146f46c5cf2a6117821c935.php 第 38 行.
+NOTIC: [8] Undefined variable: info E:\admin\Runtime\Cache\Home\ea0570200146f46c5cf2a6117821c935.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:27:01+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuUpdate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0040s ]
+SQL: INSERT INTO `hyz_menu` (`name`,`sort`,`pid`,`url`) VALUES ('商品管理','4','0','') [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:27:02+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `hyz_menu` ORDER BY sort  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 81 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:27:05+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/NodeUpdate/id/15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name` FROM `hyz_menu`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: info E:\admin\Runtime\Cache\Home\f6f48ece1d03e6c7e2ea7d964c5f2030.php 第 38 行.
+NOTIC: [8] Undefined variable: info E:\admin\Runtime\Cache\Home\f6f48ece1d03e6c7e2ea7d964c5f2030.php 第 42 行.
+NOTIC: [8] Undefined variable: info E:\admin\Runtime\Cache\Home\f6f48ece1d03e6c7e2ea7d964c5f2030.php 第 63 行.
+NOTIC: [8] Undefined variable: id E:\admin\Runtime\Cache\Home\f6f48ece1d03e6c7e2ea7d964c5f2030.php 第 69 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:27:41+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/NodeUpdate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0030s ]
+SQL: INSERT INTO `hyz_node` (`title`,`name`,`groupid`,`ismenu`,`sort`) VALUES ('商品列表','/Home/Product/productList','15','1','0') [ RunTime:0.0010s ]
+
+[ 2017-12-18T20:27:42+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `hyz_menu` ORDER BY sort  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined index: status E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 67 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\ab66fd63f6fab65b980eb3db2d39f833.php 第 81 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:27:47+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuEdit/id/15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `hyz_menu` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:28:05+08:00 ] 127.0.0.1 /www/index.php/Home/Rabc/MenuUpdate.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: UPDATE `hyz_menu` SET `name`='商品管理',`sort`='4',`url`='/Home/Product/productList' WHERE `id` = 15 [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:28:06+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:28:06+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:28:08+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Product
+
+[ 2017-12-18T20:28:09+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Product
+
+[ 2017-12-18T20:28:09+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Product
+
+[ 2017-12-18T20:28:09+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Product
+
+[ 2017-12-18T20:28:10+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Product
+
+[ 2017-12-18T20:32:28+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:32:28+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:32:30+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:32:31+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:27+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:34:27+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0030s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0010s ]
+
+[ 2017-12-18T20:34:27+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:27+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:34:29+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:29+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:34:30+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:34:30+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0010s ]
+
+[ 2017-12-18T20:34:30+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-18T20:34:30+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:34:32+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:32+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:34:32+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-18T20:34:32+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:34:32+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:32+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:34:34+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:34:34+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:34+08:00 ] 127.0.0.1 /www/index.php/Home/Advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_advert` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_advert` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_advert` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\AdvertController.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:34:35+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:12+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:12+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:35:12+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:35:12+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0030s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0010s ]
+
+[ 2017-12-18T20:35:12+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:13+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:35:13+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:15+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:35:15+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:15+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:35:20+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:35:22+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T20:35:23+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:47+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:47+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0030s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:35:48+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:35:49+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:36:16+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:36:16+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0030s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0010s ]
+
+[ 2017-12-18T20:36:18+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:36:19+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T20:36:22+08:00 ] 127.0.0.1 /www/index.php/Home/Advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_advert` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_advert` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_advert` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\AdvertController.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-18T20:36:22+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T20:36:23+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:36:28+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T20:55:58+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T20:56:04+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T20:56:05+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: tel E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T21:09:20+08:00 ] 127.0.0.1 /www/index.php/Home/Advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `hyz_advert` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_advert` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_advert` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\AdvertController.class.php 第 34 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T21:09:22+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T21:09:23+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T21:09:32+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T21:09:32+08:00 ] 127.0.0.1 /www/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_user` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `hyz_user` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: name E:\admin\Application\Home\Controller\UserController.class.php 第 29 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+NOTIC: [8] Undefined index: id E:\admin\Runtime\Cache\Home\b9311734e911642e1df78ee1c29cc938.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T21:18:07+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:19:21+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T21:19:21+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0030s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:19:43+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T21:19:43+08:00 ] 127.0.0.1 /www/index.php/Home/Index/index/ac/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`pid`,name as text,`url` FROM `hyz_menu` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `hyz_node` [ RunTime:0.0020s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='12' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='13' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='15' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='10' )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='14' )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,title as text,`name`,`sort` FROM `hyz_node` WHERE ( ismenu=1 AND groupid='7' )  [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:19:44+08:00 ] 127.0.0.1 /www/index.php/Home/Business/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Business
+
+[ 2017-12-18T21:19:46+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:19:58+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-18T21:21:07+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:21:08+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:21:08+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-18T21:21:08+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `hyz_product` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-18T21:29:23+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 31 行.
+SQL: SELECT * FROM `hyz_product` ORDER BY product_id desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: product_name E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T21:29:33+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 31 行.
+SQL: SELECT * FROM `hyz_product` ORDER BY product_id desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: product_name E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-18T21:29:37+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 31 行.
+SQL: SELECT * FROM `hyz_product` ORDER BY product_id desc  [ RunTime:0.0010s ]
+
+[ 2017-12-18T21:30:34+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 31 行.
+SQL: SELECT * FROM `hyz_product` ORDER BY product_id desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: product_name E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined index: qq E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 67 行.
+NOTIC: [8] Undefined index: province E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 68 行.
+NOTIC: [8] Undefined index: city E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 69 行.
+NOTIC: [8] Undefined index: county E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 70 行.
+NOTIC: [8] Undefined index: qq E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 67 行.
+NOTIC: [8] Undefined index: province E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 68 行.
+NOTIC: [8] Undefined index: city E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 69 行.
+NOTIC: [8] Undefined index: county E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 70 行.
+NOTIC: [8] Undefined index: qq E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 67 行.
+NOTIC: [8] Undefined index: province E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 68 行.
+NOTIC: [8] Undefined index: city E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 69 行.
+NOTIC: [8] Undefined index: county E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 70 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-18T21:36:46+08:00 ] 127.0.0.1 /www/index.php/Home/Product/productList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `hyz_product` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: where E:\admin\Application\Home\Controller\ProductController.class.php 第 31 行.
+SQL: SELECT * FROM `hyz_product` ORDER BY product_id desc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: product_name E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 40 行.
+NOTIC: [8] Undefined index: qq E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 67 行.
+NOTIC: [8] Undefined index: province E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 68 行.
+NOTIC: [8] Undefined index: city E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 69 行.
+NOTIC: [8] Undefined index: county E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 70 行.
+NOTIC: [8] Undefined index: qq E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 67 行.
+NOTIC: [8] Undefined index: province E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 68 行.
+NOTIC: [8] Undefined index: city E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 69 行.
+NOTIC: [8] Undefined index: county E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 70 行.
+NOTIC: [8] Undefined index: qq E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 67 行.
+NOTIC: [8] Undefined index: province E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 68 行.
+NOTIC: [8] Undefined index: city E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 69 行.
+NOTIC: [8] Undefined index: county E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 70 行.
+NOTIC: [8] Undefined variable: fpage E:\admin\Runtime\Cache\Home\66b6c2f58e8d1a58b5e9f842955b9640.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

@@ -1,0 +1,95 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+            <div class="search_style table-margin">
+                <div class="title_names text-blue">用户列表</div>
+                <ul class="search_content clearfix">
+                    <li class='w30'>
+                        <input type="text" placeholder=" 请填写用户电话" value="{$tel}" class="w100 height34 border" id="tel">
+                    </li>
+
+                    <li class=''><button class="btn_search button bg-blue" id="search"><i class="fa fa-search"></i> 搜索</button></li>
+                    <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
+                </ul>
+            </div>
+
+            <div class="table-margin ">
+                <notempty  name="list">
+                    <table class="table table-hover">
+                        <tr class="table-header border">
+                            <th class="w5">编号</th>
+                            <th class="w15">会员卡号</th>
+                            <th class="w10">用户名</th>
+                            <th class="w10">真实姓名</th>
+                            <th class="w20">手机</th>
+                            <!--<th class="w20">QQ号</th>-->
+                            <th class="w20">职位</th>
+                            <!--<th class="w20">省</th>-->
+                            <!--<th class="w20">市</th>-->
+                            <!--<th class="w20">区</th>-->
+                            <th class="w15">注册时间</th>
+                            <th class="w10">启用状态</th>
+                        </tr>
+
+                        <tbody id="itemContainer">
+                        <volist name="list" id="item">
+                            <tr class="list">
+                                <td>{$item.id}</td>
+                                <td>{$item.user_card}</td>
+                                <td>{$item.user_name}</td>
+                                <td>{$item.real_name}</td>
+                                <td>{$item.tel}</td>
+                                <!--<td>{$item.qq}</td>-->
+                                <td>{$item.job}</td>
+                                <!--<td>{$item.province}</td>-->
+                                <!--<td>{$item.city}</td>-->
+                                <!--<td>{$item.county}</td>-->
+                                <td>{$item.ctime|date='Y-m-d H:i', ###}</td>
+                                <eq name="item.status" value="1" >
+                                    <td><span class="text-green">已启用</span></td>
+                                    <else/>
+                                    <td><span class="text-red">已禁用</span></td>
+                                </eq>
+
+                            </tr>
+                        </volist>
+                        </tbody>
+
+                    </table>
+                    <else/>
+                    <div style="text-align:center"><span style="color:#CCCCCC;font-size:18px">没有符合条件的记录</span></div>
+                </notempty >
+            </div>
+            <!-- fpage -->
+            <div class="page">{$fpage}</div>
+        </div>
+    </div>
+
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function delcar(id){
+            layer.confirm('确定删除吗？',function(index){
+                if(index){
+                    $.ajax({
+                        url:"{:U('delcar')}",
+                        dataType:'json',
+                        type:'POST',
+                        data:{'id':id},
+                        success:function(data){
+                            layer.msg(data.msg);
+                            if(data.status == 1){
+                                setTimeout(function(){
+                                    window.location.reload();
+                                },500);
+                            }
+                        }
+                    })
+                }
+            })
+        }
+    </script>>
+
+</block>
+
