@@ -13,7 +13,7 @@
                     <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
                 </ul>
             </div>
-
+            <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a href="javascript:;" onclick="goods_add('添加商品','{:U("goods/goods_add")}','800','550')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">{$list.page}</span> </div>
             <div class="table-margin ">
                 <notempty  name="list">
                     <table class="table table-hover">
@@ -23,6 +23,7 @@
                             <th class="w15">商品名</th>
                             <th class="w10">价格</th>
                             <th class="w20">商品详情</th>
+                            <th class="w20">商品图片</th>
                             <th class="w15">创建时间</th>
                             <th class="w10">商品状态</th>
                         </tr>
@@ -35,6 +36,8 @@
                                 <td>{$item.product_name}</td>
                                 <td>{$item.price}</td>
                                 <td>{$item.product_info}</td>
+                                <td><img src="{$item.images}"></td>
+                                <!-- <td>{$item.images}</td> -->
                                 <!--<td>{$item.qq}</td>-->
                                 <!--<td>{$item.province}</td>-->
                                 <!--<td>{$item.city}</td>-->
