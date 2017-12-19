@@ -26,7 +26,7 @@
                             <th class="w20">商品图片</th>
                             <th class="w15">创建时间</th>
                             <th class="w10">商品状态</th>
-                            <th class="w5">商品操作</th>
+                            <th class="w15">商品操作</th>
                         </tr>
 
                         <tbody id="itemContainer">
@@ -51,7 +51,8 @@
                                 </eq>
                                 <td>
                                     <img src="__PUBLIC__/admin/img/z.png" class='del' alt="{$item.product_id}">&nbsp;&nbsp;
-                                    <a href="productEditor?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji'></a>
+                                    <a href="productEditor?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji'></a>&nbsp;&nbsp;
+                                    <a href="productPeriod?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/jia.png" class='jia'></a>
                                 </td>
                             </tr>
                         </volist>

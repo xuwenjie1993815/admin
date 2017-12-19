@@ -47,6 +47,9 @@ class ProductController extends \Think\Controller
         $price = I('price');
         $info = I('info');
         $type = I('type');
+        if (!$name) {
+           $this->error('新增失败缺少参数');
+        }
         if ($_FILES['file']['size']) {
             $images = D('Support')->upload();
             $config_path = C('UPLOAD_PATH');
@@ -136,6 +139,39 @@ class ProductController extends \Think\Controller
             $this->success('修改成功', 'productList');
         }else{
             $this->error('修改失败');
+        }
+    }
+    //添加期次商品
+    public function productPeriod()
+    {
+       $product_id = I('product_id');
+       $this->assign('product_id',$product_id);
+       $this->display();
+    }
+    public function productPeriod_run()
+    {
+        $name = I('name');
+        $price = I('price');
+        $info = I('info');
+        $product_id = I('product_id');
+        $product_id = addslashes($product_id);
+        $res = M('period')->where(array('p_id'=>$product_id))->order('period_time desc')->find();
+        $period_time = $res['period_time'];
+        $period_time=$period_time+1;
+        $data = array(
+                'p_id'=>$product_id,
+                'period_name'=>$name,
+                'target_num'=>$info,
+                'period_time'=>$period_time,
+                'create_time'=>time(),
+                'status_period'=>1,
+                'period_price'=>$price,
+            );
+        $rs = M('period')->add($data);
+        if ($rs) {
+            $this->success('新增成功', 'productList');
+        }else{
+            $this->error('新增失败');
         }
     }
 }
