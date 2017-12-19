@@ -11,7 +11,6 @@ class OrderController extends \Base\Controller\BaseController
 		$admin_id = $_SESSION['adminInfo']['id'];
 		$order_status = $_POST['order_status'];
 		$order_sn = $_POST['order_sn'];
-       
         //有三种类型的商品  商品抽奖订单（关联product period order）  活动抽奖订单（apply order activity）  点赞抽奖订单（apply order activity）
         //商品抽奖订单
         $join_a = "hyz_product AS p ON o.order_product_id = p.product_id";
@@ -27,6 +26,7 @@ class OrderController extends \Base\Controller\BaseController
         $where['o.order_type'] = 1;//商品抽奖订单
         $res = M('order')->alias("o")->join($join_a)->join($join_b)->field('o.*, pe.* , p.product_name ,p.price ,p.product_info,p.images')->where($where)->order($order)->select();
         //列表需要数据 订单title order_info(类型  数量  金额  图片  时间  状态)   order_id order_img  order_price order_sn order_time 
+        $data = array();
         foreach ($res as $k => $v){
             $data[$k]['order_id'] = $v['order_id'];//order_id
             $data[$k]['order_sn'] = $v['order_sn'];//title
@@ -106,7 +106,14 @@ class OrderController extends \Base\Controller\BaseController
         	}
         }
         // var_dump($order_list);die;
+        $this->assign('order_sn',$order_sn);
         $this->assign('list',$order_list)->display();
        	// var_dump($order_list);die;
 	}
+
+    public function orderDetails(){
+        $order_id = $_GET['id'];
+        
+        $this->display();
+    }
 }

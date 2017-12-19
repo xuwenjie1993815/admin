@@ -1,0 +1,121 @@
+<include file="Public/base"/>
+<div class="pd-20">
+    <table class="table">
+        <h3>订单信息</h3>
+        <tbody>
+        <tr>
+            <th class="text-r">订单类型：</th>
+            <td>{$data.order_type}</td>
+            <th class="text-r" width="80">收货人电话：</th>
+            <td>{$data.tel}</td>
+        </tr>
+        <tr>
+            <th class="text-r" width="80">订单编号：</th>
+            <td>{$data.order_sn}</td>
+			<th class="text-r" width="80">订单金额：</th>
+            <td>{$data.order_money} </td>
+            <th class="text-r" width="80">订单状态：</th>
+            <td style="color:red;">{$data.order_status}</td>
+        </tr>
+		<tr>
+            <th class="text-r" width="80">下单时间：</th>
+            <td> <if condition="$data['order_time']">{$data.order_time|date="Y-m-d H:i:s",###}<else/>无</if></td>
+            <th class="text-r" width="80">付款时间：</th>
+            <td> <if condition="$data['pay_time']">{$data.pay_time|date="Y-m-d H:i:s",###}<else/>无</if>  </td>
+        </tr>
+        <tr>
+            <th class="text-r" width="80">发货方式：</th>
+            <td style="color:red;"><if condition="($data['order_type'] eq '1') AND ($data['shipping_status'] eq '0')"> 未选择 <else/> {$data.shipping_id_name} </if></td>
+            <th class="text-r" width="80">发货状态：</th>
+            <td style="color:red;">{$data.shipping_status_name}</td>
+			<th class="text-r" width="80">发货时间：</th>
+            <td> <if condition="$data['delivery_time']">{$data.delivery_time|date="Y-m-d H:i:s",###}<else/>无</if>  </td>
+        </tr>
+		<if condition="($data['shipping_id'] eq 1) AND ($data['shipping_status'] neq '0')">
+        <tr>
+            <th class="text-r" width="80">物流公司：</th>
+            <td>{$data.express_name}</td>
+            <th class="text-r" width="80">发货单号：</th>
+            <td>{$data.express_no}</td>
+        </tr>
+		</if>
+        <tr><th><h3>收货人信息</h3></th></tr>
+        <tr>
+            <th class="text-r">收货人：</th>
+            <td>{$data.addressee}</td>
+            <th class="text-r">收货联系电话：</th>
+            <td>{$data.mobilephone}</td>
+            <th class="text-r">用户联系电话：</th>
+            <td>{$data.telephone}</td>
+        </tr>
+        <tr>
+            <th class="text-r">地址：</th>
+            <td>
+                <if condition="$data['pro'] eq '' && $data['county'] eq '' && $data['city'] eq '' && $data['address'] eq ''">
+                    无
+                    <else/>
+                    {$data.pro} {$data.city} {$data.county} {$data.address}
+                </if>
+            </td>
+        </tr>
+        <!--<tr>-->
+            <!--<if condition="!empty($data['zipcode'])">-->
+                <!--<th class="text-r" width="80">邮编：</th>-->
+                <!--<td>{$data.zipcode}</td>-->
+            <!--</if>-->
+            <!--<if condition="!empty($data['best_time'])">-->
+                <!--<th class="text-r" width="80">最佳送货时间：</th>-->
+                <!--<td>{$data.best_time}</td>-->
+            <!--</if>-->
+            <!--<if condition="!empty($data['sign_building'])">-->
+                <!--<th class="text-r" width="80">标志性建筑：</th>-->
+                <!--<td>{$data.sign_building}</td>-->
+            <!--</if>-->
+        <!--</tr>-->
+        </tbody>
+    </table>
+
+
+    <h3>商品信息</h3>
+    <table class="table table-border table-bordered table-hover table-bg table-sort">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>商品数量</th>
+            <th>单价</th>
+            <th>总价</th>
+            <th>付款总金额</th>
+            <th>发货方式</th>
+            <th>发货时间</th>
+            <th>发货状态</th>
+            <th>收货人</th>
+            <th>收货地址</th>
+            <th>收货人电话</th>
+            <th>快递公司</th>
+            <th>快递单号</th>
+        </tr>
+        </thead>
+        <tbody>
+            <volist name="goods" id="vo1">
+                <tr>
+                    <td>{$vo1.name}</td>
+                    <td>{$vo1.number}</td>
+                    <td>{$vo1.price}</td>
+                    <td>{$vo1.total_price}</td>
+                    <td>{$vo1.total_money}</td>
+                    <td>{$vo1.delivery}</td>
+                    <td><if condition="$vo1['deliveryTime']">{$vo1.deliveryTime|date="Y-m-d H:i:s",###}<else/>无</if></td>
+                    <td style="color:red;">{$vo1.deliveryStatus}</td>
+                    <td>{$vo1.consignee}</td>
+                    <td>{$vo1.address}</td>
+                    <td>{$vo1.telephone}</td>
+                    <td>{$vo1.express_code}</td>
+                    <td>{$vo1.expressNumber}</td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+</div>
+<include file='Public/footer' />
