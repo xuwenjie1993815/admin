@@ -1,0 +1,87 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+            <div class="search_style table-margin">
+                <div class="title_names text-blue">商品修改</div>
+               <!--  <ul class="search_content clearfix">
+                    <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
+                </ul> -->
+            </div>
+                 <div class="col-lg-6">
+                      <section class="panel">
+                         <!--  <header class="panel-heading">
+                              Basic Forms
+                          </header> -->
+                          <div class="panel-body">
+                              <form role="form" action='{:U("product/productEditor_run")}' method="post" enctype="multipart/form-data" onSubmit="return beforeSubmit(this);">
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">商品名称</label>
+                                      <input type="text" class="form-control" name='name' id='name' value="{$info.product_name}">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">价格</label>
+                                      <input type="text" class="form-control"  name='price' id='price' value="{$info.price}">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">产品详情</label>
+                                      <input type="text" class="form-control" name='info' id='info' value="{$info.product_info}">
+                                  </div>
+                                 <select class="form-control input-lg m-bot15" name='type' title="{$info.product_type}" id='type_product'>
+                                              <option value='2'>旅游摄影</option>
+                                              <option value='3'>旅游项目</option>
+                                              <option value='4'>健身器材</option>
+                                              <option value='5'>生活用品</option>
+                                          </select>
+                                  <div class="form-group">
+                                      <label for="exampleInputFile">商品图片</label>
+                                      <img src="{$info.images}" style="width:100px;height:100px">
+                                      <input type="file" id="exampleInputFile" name='file'>
+                                  </div>
+                                  <input style="cursor: pointer;outline: none;" type="hidden" name="product_id" id="user-name" value="{$info.product_id}">
+                                  <input type="submit" class="btn btn-primary" value='修改'>
+                              </form>
+
+                          </div>
+                      </section>
+                  </div>
+        </div>
+    </div>
+
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        function beforeSubmit(form){
+            if($("#name").val()==''){
+            alert('商品名称不能为空！');
+            return false;
+            }
+
+            if($("#price").val()=='' || isNaN($("#price").val())){
+            alert('价格不能为空！');
+            return false;
+            }
+
+            if($("#info").val()==''){
+            alert('商品详情不能为空！');
+            return false;
+            }
+        }
+        function selectValue(sId,value){
+        var s = document.getElementById(sId);  
+        var ops = s.options;  
+        for(var i=0;i<ops.length; i++){  
+            var tempValue = ops[i].value;  
+            if(tempValue == value)  
+            {  
+                ops[i].selected = true;  
+            }  
+        }  
+    }
+    //调用方法设置
+    selectValue('type_product',$("#type_product").attr('title')); 
+    </script>>
+
+</block>
+

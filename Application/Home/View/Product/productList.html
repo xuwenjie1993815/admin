@@ -20,17 +20,18 @@
                         <tr class="table-header border">
                             <th class="w5">编号</th>
                             <th class="w10">商品类型</th>
-                            <th class="w15">商品名</th>
+                            <th class="w10">商品名</th>
                             <th class="w10">价格</th>
                             <th class="w20">商品详情</th>
                             <th class="w20">商品图片</th>
                             <th class="w15">创建时间</th>
                             <th class="w10">商品状态</th>
+                            <th class="w5">商品操作</th>
                         </tr>
 
                         <tbody id="itemContainer">
                         <volist name="list" id="item">
-                            <tr class="list">
+                            <tr class="list" id="tae_{$item.product_id}">
                                 <td>{$item.product_id}</td>
                                 <td>{$item.product_type}</td>
                                 <td>{$item.product_name}</td>
@@ -48,7 +49,10 @@
                                     <else/>
                                     <td><span class="text-red">已禁用</span></td>
                                 </eq>
-
+                                <td>
+                                    <img src="__PUBLIC__/admin/img/z.png" class='del' alt="{$item.product_id}">&nbsp;&nbsp;
+                                    <a href="productEditor?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji'></a>
+                                </td>
                             </tr>
                         </volist>
                         </tbody>
@@ -66,26 +70,35 @@
     <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-        function delcar(id){
-            layer.confirm('确定删除吗？',function(index){
-                if(index){
-                    $.ajax({
-                        url:"{:U('delcar')}",
-                        dataType:'json',
-                        type:'POST',
-                        data:{'id':id},
-                        success:function(data){
-                            layer.msg(data.msg);
-                            if(data.status == 1){
-                                setTimeout(function(){
-                                    window.location.reload();
-                                },500);
-                            }
-                        }
-                    })
-                }
-            })
-        }
+            $('.del').click(function(event) {
+                var target_id = $(this).attr("alt");
+                layer.confirm('确认要删除吗？', {
+                        btn : [ '确定', '取消' ]//按钮
+                    }, function(index) {
+                        layer.close(index);
+                         $.ajax({
+                                url: "delProduct",
+                                type: "POST",
+                                data: {
+                                    product_id:target_id
+                                },
+                                success:function(data){
+                                    if (data.code==0) {
+                                        layer.open({
+                                            content:"删除成功"
+                                        });
+                                        $("#tae_"+target_id).remove();
+                                    }else{
+                                        layer.open({
+                                            content:"删除失败"
+                                        });
+                                    }
+                               },
+                       });
+                    }); 
+                event.stopPropagation();
+               
+            });
     </script>>
 
 </block>

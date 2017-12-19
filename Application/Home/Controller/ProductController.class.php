@@ -47,7 +47,7 @@ class ProductController extends \Think\Controller
         $price = I('price');
         $info = I('info');
         $type = I('type');
-        if ($_FILES) {
+        if ($_FILES['file']['size']) {
             $images = D('Support')->upload();
             $config_path = C('UPLOAD_PATH');
             $path = 'http://'.$_SERVER['HTTP_HOST'].$config_path.$images[0];
@@ -68,7 +68,74 @@ class ProductController extends \Think\Controller
             $this->success('新增成功', 'productList');
            //$this->redirect('product/productList');
         }else{
-            $this->error('新增失败', 'productList');
+            $this->error('新增失败');
+        }
+    }
+     //删除产品
+    public function delProduct()
+    {
+        $product_id = I('product_id');
+        $product_id = addslashes($product_id);
+        $row = M('product')->where(array('product_id'=>$product_id))->delete();
+        if ($row) {
+            $data = array(
+                'code'=>0,
+                'msg'=>'删除成功',
+                );
+           $this->ajaxReturn($data);
+        }else{
+            $data = array(
+                'code'=>1,
+                'msg'=>'删除失败',
+                );
+           $this->ajaxReturn($data);
+        }
+    }
+    //商品修改展示页面
+    public function productEditor()
+    {
+        $product_id = I('product_id');
+        $product_id = addslashes($product_id);
+        $res = M('product')->where(array('product_id'=>$product_id))->find();
+        $this->assign('info',$res);
+        $this->display();
+    }
+    //修改图片
+    public function productEditor_run()
+    {
+        $name = I('name');
+        $price = I('price');
+        $info = I('info');
+        $type = I('type');
+        $product_id = I('product_id');
+        if ($_FILES['file']['size']) {
+            $images = D('Support')->upload();
+            $config_path = C('UPLOAD_PATH');
+            $path = 'http://'.$_SERVER['HTTP_HOST'].$config_path.$images[0];
+        }
+        if ($path) {
+            $data = array(
+                'product_name'=>$name,
+                'price'=>$price,
+                'images'=>$path,
+                'change_time'=>time(),
+                'product_type'=>$type,
+                'product_info'=>$info,
+            );
+        }else{
+            $data = array(
+                'product_name'=>$name,
+                'price'=>$price,
+                'change_time'=>time(),
+                'product_type'=>$type,
+                'product_info'=>$info,
+                );
+        }
+        $res = M('product')->where(array('product_id'=>$product_id))->save($data);
+        if ($res) {
+            $this->success('修改成功', 'productList');
+        }else{
+            $this->error('修改失败');
         }
     }
 }
