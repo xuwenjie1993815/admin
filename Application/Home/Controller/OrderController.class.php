@@ -95,13 +95,13 @@ class OrderController extends \Base\Controller\BaseController
         foreach ($order_list as $key => $value) {
         	switch ($value['order_type']) {
         		case '1':
-        			$order_list[$key]['order_type'] = '商品订单';
+        			$order_list[$key]['order_type_name'] = '商品订单';
         			break;
         		case '2':
-        			$order_list[$key]['order_type'] = '活动订单';
+        			$order_list[$key]['order_type_name'] = '活动订单';
         			break;
         		case '3':
-        			$order_list[$key]['order_type'] = '点赞订单';
+        			$order_list[$key]['order_type_name'] = '点赞订单';
         			break;
         	}
         }
@@ -113,7 +113,68 @@ class OrderController extends \Base\Controller\BaseController
 
     public function orderDetails(){
         $order_id = $_GET['id'];
-        
-        $this->display();
+        $order_type = $_GET['order_type'];
+        //有三种类型的商品  商品抽奖订单（关联product period order）  活动抽奖订单（apply order activity）  点赞抽奖订单（apply order activity）
+        $where['o.order_id'] = $order_id;
+        switch ($order_type) {
+            case '1':
+                $join_a = "hyz_product AS p ON o.order_product_id = p.product_id";
+                $join_b = "hyz_period AS pe ON o.order_product_id = pe.p_id";
+                $order = "o.order_time desc";
+                $field = 'o.*, pe.* , p.product_name ,p.price ,p.product_info,p.images';
+                $where['pe.status_period'] = 1;
+                $where['o.order_type'] = 1;//商品抽奖订单
+                break;
+            case '2':
+                $join_a = "hyz_apply AS a ON a.order_id = o.order_id";
+                $join_b = "hyz_activity AS ac ON ac.activity_id = o.activity_id";
+                $order = "o.order_time desc";
+                $where['a.apply_type'] = 1;
+                $where['o.order_type'] = 2;//参与活动订单
+                $field = 'o.*, ac.*,a.*';
+                break;
+            case '3':
+                $join_a = "hyz_apply AS a ON a.apply_id = o.apply_id";
+                $join_b = "hyz_activity AS ac ON ac.activity_id = o.activity_id";
+                $where['a.apply_type'] = 1;
+                $where['o.order_type'] = 3;//参与点赞订单
+                $field = 'o.*, ac.*,a.*';
+                $order = "o.order_time desc";
+                break;
+        }
+        $res = M('order')->alias("o")->join($join_a)->join($join_b)->field($field)->where($where)->order($order)->select();
+        // var_dump($res);
+        $data = array();
+        foreach ($res as $k => $v){
+            $data[$k]['order_id'] = $v['order_id'];//order_id
+            $data[$k]['order_sn'] = $v['order_sn'];//title
+            $data[$k]['tel'] = $v['tel'];//tel
+            $data[$k]['period_name'] = $v['period_name'];//title
+            $data[$k]['title'] = $v['title'];//title
+            $data[$k]['activity_name'] = $v['activity_name'];//title
+            $data[$k]['product_name'] = $v['product_name'];
+            $data[$k]['images'] = $v['images'];//商品图片
+            $data[$k]['order_price'] = $v['order_money'];//金额
+            $data[$k]['product_num'] = $v['product_num'];//数量
+            $data[$k]['period_time'] = $v['period_time'];//活动期数
+            $data[$k]['order_status'] = $v['order_status'];//订单状态
+            $data[$k]['order_time'] = $v['order_time'];//订单时间
+            $data[$k]['order_type'] = $v['order_type'];//订单类型
+        }
+        foreach ($data as $key => $value) {
+            switch ($value['order_type']) {
+                case '1':
+                    $data[$key]['order_type_name'] = '商品订单';
+                    break;
+                case '2':
+                    $data[$key]['order_type_name'] = '活动订单';
+                    break;
+                case '3':
+                    $data[$key]['order_type_name'] = '点赞订单';
+                    break;
+            }
+        }
+        // var_dump($data);
+        $this->assign('data',$data[0])->display();
     }
 }
