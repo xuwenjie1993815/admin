@@ -37,4 +37,12 @@ class ProductController extends \Think\Controller
         $this->assign('list',$rst);
         $this->display();
 	}
+    public function goodsAdd()
+    {
+        $this->display();
+    }
+    public function goodsAdd_run()
+    {
+        
+    }
 }

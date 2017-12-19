@@ -1,0 +1,58 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+            <div class="search_style table-margin">
+                <div class="title_names text-blue">商品添加</div>
+                <ul class="search_content clearfix">
+                    <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
+                </ul>
+            </div>
+                 <div class="col-lg-6">
+                      <section class="panel">
+                         <!--  <header class="panel-heading">
+                              Basic Forms
+                          </header> -->
+                          <div class="panel-body">
+                              <form role="form">
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">商品名称</label>
+                                      <input type="text" class="form-control" id="exampleInputEmail1">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">价格</label>
+                                      <input type="text" class="form-control" id="exampleInputPassword1">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">产品详情</label>
+                                      <input type="password" class="form-control" id="exampleInputPassword1">
+                                  </div>
+                                 <select class="form-control input-lg m-bot15">
+                                              <option value='2'>旅游摄影</option>
+                                              <option value='3'>旅游项目</option>
+                                              <option value='4'>健身器材</option>
+                                              <option value='5'>生活用品</option>
+                                          </select>
+                                  <div class="form-group">
+                                      <label for="exampleInputFile">商品图片</label>
+                                      <input type="file" id="exampleInputFile">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+
+                          </div>
+                      </section>
+                  </div>
+            <!-- fpage -->
+            <div class="page">{$fpage}</div>
+        </div>
+    </div>
+
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        
+    </script>>
+
+</block>
+
