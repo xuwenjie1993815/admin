@@ -34,15 +34,16 @@
                             <tr class="list">
                                 <td>{$item.order_id}</td>
                                 <td>{$item.order_sn}</td>
-                                <td>{$item.product_name}</td>
+                                <if condition="$item['product_name']">
+                                    <td>{$item.product_name}</td>
+                                <else/>
+                                    <td>{$item.title}</td>
+                                </if>
                                 <td>{$item.order_price}</td>
                                 <td>{$item.addressee}</td>
                                 <td>{$item.address}</td>
                                 <td>{$item.tel}</td>
                                 <td>{$item.order_type}</td>
-                                <!--<td>{$item.province}</td>-->
-                                <!--<td>{$item.city}</td>-->
-                                <!--<td>{$item.county}</td>-->
                                 <td>{$item.order_time|date='Y-m-d H:i', ###}</td>
                                 <eq name="item.order_status" value="1" >
                                     <td><span class="text-green">已下单</span></td>

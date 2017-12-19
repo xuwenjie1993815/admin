@@ -10,6 +10,7 @@ class OrderController extends \Base\Controller\BaseController
 		//获取用户信息
 		$admin_id = $_SESSION['adminInfo']['id'];
 		$order_status = $_POST['order_status'];
+		$order_sn = $_POST['order_sn'];
        
         //有三种类型的商品  商品抽奖订单（关联product period order）  活动抽奖订单（apply order activity）  点赞抽奖订单（apply order activity）
         //商品抽奖订单
@@ -18,6 +19,9 @@ class OrderController extends \Base\Controller\BaseController
         $order = "o.order_time desc";
         if ($admin_id != '1') {
         	$where['p.shop_id'] = $admin_id;
+        }
+        if ($order_sn) {
+        	$where['o.order_sn'] = $order_sn;
         }
         $where['pe.status_period'] = 1;
         $where['o.order_type'] = 1;//商品抽奖订单
@@ -45,9 +49,13 @@ class OrderController extends \Base\Controller\BaseController
         if ($admin_id != '1') {
         $where_apply['ac.shop_id'] = $admin_id;
      	}
+     	if ($order_sn) {
+        	$where_apply['o.order_sn'] = $order_sn;
+        }
         $where_apply['o.order_type'] = 2;//参与活动订单
         $field_apply = 'o.*, ac.*,a.*';
         $res_apply = M('order')->alias("o")->join($join_a)->join($join_b)->field($field_apply)->where($where_apply)->order($order)->select();
+        $data_apply = array();
         foreach ($res_apply as $k => $v){
             $data_apply[$k]['order_id'] = $v['order_id'];//order_id
             $data_apply[$k]['order_sn'] = $v['order_sn'];
@@ -66,6 +74,7 @@ class OrderController extends \Base\Controller\BaseController
         $where_apply['o.order_type'] = 3;//参与点赞订单
         $field_apply = 'o.*, ac.*,a.*';
         $res_dz = M('order')->alias("o")->join($join_a)->join($join_b)->field($field_apply)->where($where_apply)->order($order)->select();
+        $data_dz = array();
         foreach ($res_dz as $k => $v){
             $data_dz[$k]['order_id'] = $v['order_id'];//order_id
             $data_dz[$k]['order_sn'] = $v['order_sn'];
