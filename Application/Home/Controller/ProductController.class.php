@@ -43,6 +43,8 @@ class ProductController extends \Think\Controller
     }
     public function goodsAdd_run()
     {
-        
+        $name = I('name');
+        $name = I('name');
+        $name = I('name');
     }
 }
