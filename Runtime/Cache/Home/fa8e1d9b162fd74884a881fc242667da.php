@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>PRODUCT</title>
 
-    <link href="/www/Public/default/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/www/Public/default/css/layout.css" rel="stylesheet">
-    <link href="/www/Public/default/css/style.css" rel="stylesheet">
-    <link href="/www/Public/default/select2/select2.css" rel="stylesheet">
+    <link href="/admin/www/Public/default/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/admin/www/Public/default/css/layout.css" rel="stylesheet">
+    <link href="/admin/www/Public/default/css/style.css" rel="stylesheet">
+    <link href="/admin/www/Public/default/select2/select2.css" rel="stylesheet">
 
-    <link href="/www/Public/default/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/www/Public/default/bootstrap/js/bootstrap.js">
+    <link href="/admin/www/Public/default/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/www/Public/default/bootstrap/js/bootstrap.js">
 
-    <script src="/www/Public/default/jquery/jquery.min.js"></script>
-    <script src="/www/Public/default/layer/layer.js" type="text/javascript"></script>
-    <script src="/www/Public/default/global.js" type="text/javascript"></script>
-    <script src="/www/Public/default/layui/layui.js" type="text/javascript"></script>
-    <script src="/www/Public/default/select2/select2.min.js" type="text/javascript"></script>
-    <script src="/www/Public/default/select2/zh-CN.js" type="text/javascript"></script>
+    <script src="/admin/www/Public/default/jquery/jquery.min.js"></script>
+    <script src="/admin/www/Public/default/layer/layer.js" type="text/javascript"></script>
+    <script src="/admin/www/Public/default/global.js" type="text/javascript"></script>
+    <script src="/admin/www/Public/default/layui/layui.js" type="text/javascript"></script>
+    <script src="/admin/www/Public/default/select2/select2.min.js" type="text/javascript"></script>
+    <script src="/admin/www/Public/default/select2/zh-CN.js" type="text/javascript"></script>
 
     <style>
         .paging{overflow:hidden;margin:0;padding:0;}
