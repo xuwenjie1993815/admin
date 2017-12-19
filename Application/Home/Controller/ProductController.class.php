@@ -44,7 +44,31 @@ class ProductController extends \Think\Controller
     public function goodsAdd_run()
     {
         $name = I('name');
-        $name = I('name');
-        $name = I('name');
+        $price = I('price');
+        $info = I('info');
+        $type = I('type');
+        if ($_FILES) {
+            $images = D('Support')->upload();
+            $config_path = C('UPLOAD_PATH');
+            $path = 'http://'.$_SERVER['HTTP_HOST'].$config_path.$images[0];
+        }
+        $admin_id= session('adminInfo');
+        $data = array(
+                'product_name'=>$name,
+                'price'=>$price,
+                'images'=>$path,
+                'status'=>1,
+                'ctime'=>time(),
+                'product_type'=>$type,
+                'product_info'=>$info,
+                'admin_id'=>$admin_id['id'],
+            );
+        $res = M('product')->add($data);
+        if ($res) {
+            $this->success('新增成功', 'productList');
+           //$this->redirect('product/productList');
+        }else{
+            $this->error('新增失败', 'productList');
+        }
     }
 }

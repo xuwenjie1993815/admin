@@ -9,4 +9,6 @@ return array(
         'savePath'  =>  'banner/',
         'autoSub'   =>  false,
     ),
+    'PATH_SUCCESS'=>'admin/www/index.php/Home',
+    'UPLOAD_PATH'=>'/admin/www/Uploads/',
 );
