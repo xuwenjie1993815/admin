@@ -89,6 +89,9 @@ class OrderController extends \Base\Controller\BaseController
             $data_dz[$k]['order_type'] = $v['order_type'];//订单类型
         }
         $order_list = array_merge($data,$data_apply,$data_dz);
+        //时间排序
+        $last_names = array_column($order_list, 'order_time');
+        array_multisort($last_names,SORT_DESC,$order_list);
         foreach ($order_list as $key => $value) {
         	switch ($value['order_type']) {
         		case '1':
