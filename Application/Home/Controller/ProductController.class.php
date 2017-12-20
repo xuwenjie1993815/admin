@@ -169,6 +169,7 @@ class ProductController extends \Think\Controller
         }
         $period_time = $res['period_time'];
         $period_time=$period_time+1;
+        $admin_id= session('adminInfo');
         $data = array(
                 'p_id'=>$product_id,
                 'period_name'=>$name,
@@ -177,6 +178,7 @@ class ProductController extends \Think\Controller
                 'create_time'=>time(),
                 'status_period'=>1,
                 'period_price'=>$price,
+                'shop_id'=>$admin_id['id'],
             );
         $rs = M('period')->add($data);
         if ($rs) {
