@@ -16,25 +16,32 @@ use Base\Logic\PubLogic;
 class ProductController extends \Think\Controller
 {
 	public function productList(){
-		$goods_name = I('get.product_name');
-        $status = I('get.status');
+		$goods_name = I('post.product_name');
+        //var_dump($goods_name);die;
+        // $status = I('post.status');
         $goods = M('product');
         if($goods_name){ //按商品名称查询
-            $where['product_name'] = array("like","$goods_name%");
+            $where['product_name'] = array("like","%$goods_name%");
         }
-        if($status !=-1 && $status !=''){ //按商品状态查询
-            $where['status'] = $status;
+        $role = session('adminInfo');
+        if ($role['role_id'] !=0) {
+            $where['shop_id']=$role['id'];
         }
-        //$rst = $goods->where($where)->order('product_id desc')->select(); //未分页
-		
-
-		$rst = $goods->where($where)->order('product_id desc')->select();
-		
-        $this->assign('gname',$goods_name);
-        $this->assign('gstatus',$status);
-        $this->assign('parent_title','商品管理');
-        $this->assign('menu_title','商品列表');
+        $count = $goods->where($where)->count();
+        $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
+        $Page->setConfig('prev','');
+        $Page->setConfig('next','');
+        // if($status !=-1 && $status !=''){ //按商品状态查询
+        //     $where['status'] = $status;
+        // }
+        // foreach($where as $key=>$goods_name) {
+        //       $Page->parameter[$key]=urlencode($goods_name);
+        // }
+        $show= $Page->show();// 分页显示输出
+		$rst = $goods->where($where)->order('product_id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('list',$rst);
+        $this->assign('product_name',$goods_name);
+        $this->assign('page',$show);
         $this->display();
 	}
     public function goodsAdd()
@@ -64,7 +71,7 @@ class ProductController extends \Think\Controller
                 'ctime'=>time(),
                 'product_type'=>$type,
                 'product_info'=>$info,
-                'admin_id'=>$admin_id['id'],
+                'shop_id'=>$admin_id['id'],
             );
         $res = M('product')->add($data);
         if ($res) {
@@ -162,6 +169,7 @@ class ProductController extends \Think\Controller
         }
         $period_time = $res['period_time'];
         $period_time=$period_time+1;
+        $admin_id= session('adminInfo');
         $data = array(
                 'p_id'=>$product_id,
                 'period_name'=>$name,
@@ -170,6 +178,7 @@ class ProductController extends \Think\Controller
                 'create_time'=>time(),
                 'status_period'=>1,
                 'period_price'=>$price,
+                'shop_id'=>$admin_id['id'],
             );
         $rs = M('period')->add($data);
         if ($rs) {
