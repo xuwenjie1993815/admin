@@ -40,6 +40,7 @@ class ProductController extends \Think\Controller
         $show= $Page->show();// 分页显示输出
 		$rst = $goods->where($where)->order('product_id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('list',$rst);
+        $this->assign('product_name',$goods_name);
         $this->assign('page',$show);
         $this->display();
 	}
