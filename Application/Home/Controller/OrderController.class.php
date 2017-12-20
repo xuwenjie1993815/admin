@@ -9,6 +9,7 @@ class OrderController extends \Base\Controller\BaseController
 	public function orderList(){
 		//获取用户信息
 		$admin_id = $_SESSION['adminInfo']['id'];
+		$role_id = $_SESSION['adminInfo']['role_id'];
 		$order_status = $_POST['order_status'];
 		$order_sn = $_POST['order_sn'];
         //有三种类型的商品  商品抽奖订单（关联product period order）  活动抽奖订单（apply order activity）  点赞抽奖订单（apply order activity）
@@ -16,7 +17,7 @@ class OrderController extends \Base\Controller\BaseController
         $join_a = "hyz_product AS p ON o.order_product_id = p.product_id";
         $join_b = "hyz_period AS pe ON o.order_product_id = pe.p_id";
         $order = "o.order_time desc";
-        if ($admin_id != '1') {
+        if ($role_id != '0') {
         	$where['p.shop_id'] = $admin_id;
         }
         if ($order_sn) {
@@ -46,7 +47,7 @@ class OrderController extends \Base\Controller\BaseController
         $join_b = "hyz_activity AS ac ON ac.activity_id = o.activity_id";
         $order = "o.order_time desc";
         $where_apply['a.apply_type'] = 1;
-        if ($admin_id != '1') {
+        if ($role_id != '0') {
         $where_apply['ac.shop_id'] = $admin_id;
      	}
      	if ($order_sn) {
@@ -177,4 +178,24 @@ class OrderController extends \Base\Controller\BaseController
         // var_dump($data);
         $this->assign('data',$data[0])->display();
     }
+
+   	public function delOrder(){
+   		$return_data =array();
+        $return_data['status'] = 0;
+        if(isset($_POST['id'])){
+            $id = I('post.id');
+            $rst = M('order')->where(array('order_id'=>$id))->save(array('order_status'=>3));
+            if($rst){
+                $return_data['status'] = 1;
+                $return_data['msg'] = "删除成功";
+                echo json_encode($return_data);die();
+            }else{
+                $return_data['msg'] = "删除失败";
+                echo json_encode($return_data);die();
+            }
+        }else{
+            $return_data['msg'] = "请选中订单";
+            echo json_encode($return_data);die();
+        }
+   	}
 }
