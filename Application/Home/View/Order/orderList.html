@@ -51,13 +51,19 @@
                                     <td><span class="text-green">已下单</span></td>
                                 </if>
                                 <if condition="$item['order_status'] eq 1">
-                                    <td><span class="text-red">已付款</span></td>
+                                    <td><span class="text-red">已付款,待开奖</span></td>
                                 </if>
                                 <if condition="$item['order_status'] eq 2">
-                                    <td><span class="text-red">已完成</span></td>
+                                    <td><span class="text-red">已中奖,待兑奖</span></td>
                                 </if>
                                 <if condition="$item['order_status'] eq 3">
                                     <td><span class="text-red">已取消(无效)</span></td>
+                                </if>
+                                <if condition="$item['order_status'] eq 4">
+                                    <td><span class="text-red">已兑奖</span></td>
+                                </if>
+                                <if condition="$item['order_status'] eq 5">
+                                    <td><span class="text-red">未中奖</span></td>
                                 </if>
                                 <td>
                                     <a style="text-decoration:none" class="ml-5" onclick="order_detail('订单详情','{:U('Home/Order/orderDetails',array('id'=>$item['order_id'],'order_type' => $item['order_type']))}')" href="javascript:;" title="查看"><i class="Hui-iconfont">&#xe665;</i></a>
