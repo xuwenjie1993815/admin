@@ -8,10 +8,27 @@ class NoticeController extends \Base\Controller\BaseController
 {
 	//通知列表
 	public function noticeList(){
+        $admin_name = $_POST['amdin_name'];
+        $type = $_POST['type'];
+        $notice_status = (string)$_POST['notice_status'];
 		$admin_id = $_SESSION['adminInfo']['id'];
 		$role_id = $_SESSION['adminInfo']['role_id'];
 		if ($role_id != '0') {
         	$where['n.shop_id'] = $admin_id;
+        }
+        if ($type) {
+            $where['n.type'] = $type;
+        }
+        if ($notice_status == '0' || $notice_status == '1') {
+            $where['n.notice_status'] = $notice_status;
+        }
+
+        //如果是超级管理员则可以查找所有管理员发布的信息
+        if ($role_id == '0') {
+            if ($admin_name) {
+                $admin_id = M('admin')->where(array('nick_name' => $admin_name))->getField('id');
+                $where['n.shop_id'] = $admin_id;
+            }
         }
         $join_a = "hyz_user AS u ON u.user_id = n.user_id";
         $order = 'n.add_time desc';
@@ -28,6 +45,9 @@ class NoticeController extends \Base\Controller\BaseController
 					break;
 			}
 		}
+        $this->assign('admin_name',$admin_name);
+        $this->assign('type',$type);
+        $this->assign('notice_status',$notice_status);
     	$this->assign('list',$notice_list)->display();
 	}
 

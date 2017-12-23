@@ -9,12 +9,12 @@
                     <div class="text-c">
                         <input type="text" class="w10 height30 border" placeholder="公告发布人姓名" id="admin_name" name="admin_name" value="{$admin_name}">
                         <select name="type" style="width:100px" class="select input-text">
-                            <option value="all" <if condition="$_GET['type'] eq 'all'">selected</if> >类型</option>
+                            <option value="" <if condition="$_GET['type'] eq ''">selected</if> >类型</option>
                             <option value="1" <if condition="$_GET['type'] eq '1'">selected</if> >获奖信息</option>
                             <option value="2" <if condition="$_GET['type'] eq '2'">selected</if> >动态/公告</option>
                         </select>
                         <select name="notice_status" style="width:100px" class="select input-text">
-                            <option value="all" <if condition="$_GET['notice_status'] eq 'all'">selected</if> >状态</option>
+                            <option value="" <if condition="$_GET['notice_status'] eq ''">selected</if> >状态</option>
                             <option value="0" <if condition="$_GET['notice_status'] eq '0'">selected</if> >未发布</option>
                             <option value="1" <if condition="$_GET['notice_status'] eq '1'">selected</if> >已发布</option>
                         </select>
