@@ -39,6 +39,10 @@ class ProductController extends \Think\Controller
         // }
         $show= $Page->show();// 分页显示输出
 		$rst = $goods->where($where)->order('product_id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+        foreach ($rst as $k => $v) {
+            $one=explode(',', $v['images']);
+            $rst[$k]['images'] = $one[0];
+        }
         $this->assign('list',$rst);
         $this->assign('product_name',$goods_name);
         $this->assign('page',$show);
@@ -57,10 +61,14 @@ class ProductController extends \Think\Controller
         if (!$name) {
            $this->error('新增失败缺少参数');
         }
-        if ($_FILES['file']['size']) {
+        //var_dump($_POST);die;
+        if ($_FILES['file1']['size']) {
             $images = D('Support')->upload();
             $config_path = C('UPLOAD_PATH');
-            $path = 'http://'.$_SERVER['HTTP_HOST'].$config_path.$images[0];
+            foreach ($images as $k => $v) {
+               $path_all[]='http://'.$_SERVER['HTTP_HOST'].$config_path.$v;
+            }
+            $path = implode(',', $path_all);
         }
         $admin_id= session('adminInfo');
         $data = array(
@@ -110,7 +118,7 @@ class ProductController extends \Think\Controller
         $this->assign('info',$res);
         $this->display();
     }
-    //修改图片
+    //修改商品
     public function productEditor_run()
     {
         $name = I('name');
@@ -118,10 +126,13 @@ class ProductController extends \Think\Controller
         $info = I('info');
         $type = I('type');
         $product_id = I('product_id');
-        if ($_FILES['file']['size']) {
+        if ($_FILES['file1']['size']) {
             $images = D('Support')->upload();
             $config_path = C('UPLOAD_PATH');
-            $path = 'http://'.$_SERVER['HTTP_HOST'].$config_path.$images[0];
+            foreach ($images as $k => $v) {
+               $path_all[]='http://'.$_SERVER['HTTP_HOST'].$config_path.$v;
+            }
+            $path = implode(',', $path_all);
         }
         if ($path) {
             $data = array(
