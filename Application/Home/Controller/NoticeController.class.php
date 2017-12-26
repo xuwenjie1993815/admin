@@ -14,28 +14,37 @@ class NoticeController extends \Base\Controller\BaseController
 		$admin_id = $_SESSION['adminInfo']['id'];
 		$role_id = $_SESSION['adminInfo']['role_id'];
 		if ($role_id != '0') {
-        	$where['n.shop_id'] = $admin_id;
+        	$where['shop_id'] = $admin_id;
         }
         if ($type) {
-            $where['n.type'] = $type;
+            $where['type'] = $type;
         }
         if ($notice_status == '0' || $notice_status == '1') {
-            $where['n.notice_status'] = $notice_status;
+            $where['notice_status'] = $notice_status;
         }
 
         //如果是超级管理员则可以查找所有管理员发布的信息
         if ($role_id == '0') {
             if ($admin_name) {
                 $admin_id = M('admin')->where(array('nick_name' => $admin_name))->getField('id');
-                $where['n.shop_id'] = $admin_id;
+                $where['shop_id'] = $admin_id;
             }
         }
-        $join_a = "hyz_user AS u ON u.user_id = n.user_id";
-        $order = 'n.add_time desc';
-        $field = 'n.*,u.*';
-		$notice_list = M('notice')->alias('n')->join($join_a)->field($field)->where($where)->order($order)->select();
+        // $join_a = "hyz_user AS u ON u.user_id = n.user_id";
+        $order = 'add_time desc';
+        // $field = 'n.*,u.*';
+		$notice_list = M('notice')->where($where)->order($order)->select();
 		foreach ($notice_list as $key => $value) {
 			$notice_list[$key]['admin_name'] = M('admin')->where(array('id' => $value['shop_id']))->getField('nick_name');
+            if ($value['user_id']) {
+                $notice_user_info = M('user')->field('user_name,real_name')->where(array('user_id' => $value['user_id']))->find();
+                $notice_list[$key]['user_name'] = $notice_user_info['user_name'];
+                $notice_list[$key]['real_name'] = $notice_user_info['real_name'];
+            }else{
+                $notice_list[$key]['user_name'] = '全部用户';
+                $notice_list[$key]['real_name'] = '全部用户';
+            }
+            
 			switch ($value['notice_status']) {
 				case '1':
 					$notice_list[$key]['notice_status_name'] = '已发布';
@@ -116,9 +125,13 @@ class NoticeController extends \Base\Controller\BaseController
         		$notice_info['status_name'] = '通知已删除';
         		break;
         }
+        if ($notice_info['user_id']) {
+            $user_info = M('user')->where(array('user_id' => $notice_info['user_id']))->find();
+            $notice_info['user_name'] = $user_info['real_name']?:$user_info['user_name'];
+        }else{
+            $notice_info['user_name'] = '全部用户';
+        }
         
-        $user_info = M('user')->where(array('user_id' => $notice_info['user_id']))->find();
-        $notice_info['user_name'] = $user_info['real_name']?:$user_info['user_name'];
         // $notice_type = getNoticeType();
         // $notice_info['type'] = $notice_type[$notice_info['type']];
         $notice_info['admin_name'] = M('admin')->where(array('id' =>  $notice_info['shop_id']))->getField('nick_name');
