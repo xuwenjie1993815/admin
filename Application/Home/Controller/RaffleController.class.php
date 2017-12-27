@@ -36,7 +36,16 @@ class RaffleController extends \Think\Controller
 		$info = M('period')->where(array('period_id'=>$period_id))->find();
 		$product_id = $info['p_id'];
 		$period_time = $info['period_time'];
-		$order = M('order')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id))->select();
+		$order_begin = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id))->order('order_id')->limit(5)->select();
+		$order_end = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id))->order('order_id desc')->limit(5)->select();
+		foreach ($order_begin as $k => $v) {
+			$begin .= substr($order_begin[$k]['tel'], -2);
+		}
+		foreach ($order_end as $k => $v) {
+			$end .= substr($order_end[$k]['tel'], -2);
+		}
+		$like = ($begin+$end)%$info['target_num'];
+		$winCode = 10000001+$like;//中奖码
 		
 	}
 
