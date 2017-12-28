@@ -171,6 +171,7 @@ class ProductController extends \Think\Controller
         $name = I('name');
         $price = I('price');
         $info = I('info');
+        $attention = I('attention');
         $product_id = I('product_id');
         $product_id = addslashes($product_id);
         $res = M('period')->where(array('p_id'=>$product_id))->order('period_time desc')->find();
@@ -190,6 +191,7 @@ class ProductController extends \Think\Controller
                 'status_period'=>1,
                 'period_price'=>$price,
                 'shop_id'=>$admin_id['id'],
+                'attention'=>$attention,
             );
         $rs = M('period')->add($data);
         if ($rs) {
