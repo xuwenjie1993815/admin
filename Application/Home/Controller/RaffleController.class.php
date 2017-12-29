@@ -28,7 +28,7 @@ class RaffleController extends \Think\Controller
         $this->assign('page',$show);
 		$this->display();
 	}
-	//开奖
+	//商品开奖
 	public function prize()
 	{
 		$period_id = I('period_id');
@@ -45,8 +45,41 @@ class RaffleController extends \Think\Controller
 			$end .= substr($order_end[$k]['tel'], -2);
 		}
 		$like = ($begin+$end)%$info['target_num'];
-		$winCode = 10000001+$like;//中奖码
-		
+		$winCode = 10000001+$like;//中奖码 10000025
+		$winUser = M('order')->field('user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'lottery_code'=>array("like","%$winCode%")))->select();
+		foreach ($winUser as $k => $v) {
+			$user_id[]=$v['user_id'];
+		}
+		$user_id= implode(',', $user_id);//中奖的人
+		//中奖信息加入数据库
+		$indata = array(
+				'win_code'=>$winCode,
+				'win_type'=>1,
+				'user_id'=>$user_id,
+				'period_id'=>$period_id,
+				'create_time'=>time()
+			);
+		$win = M('win')->add($indata);
+		if ($win) {
+			//修改期数的状态
+			$res =M('period')->where(array('period_id'=>$period_id))->save(array('status_period'=>2));
+		}
+		if ($res) {
+			$data = array(
+                'code'=>0,
+                'msg'=>'抽奖成功',
+                );
+           $this->ajaxReturn($data);
+		}else{
+			$data = array(
+                'code'=>1,
+                'msg'=>'抽奖失败',
+                );
+           $this->ajaxReturn($data);
+		}
 	}
+	//活动开奖
+	
+	//点赞开奖
 
 }

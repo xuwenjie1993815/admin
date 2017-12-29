@@ -28,7 +28,7 @@
 
                         <tbody id="itemContainer">
                         <volist name="list" id="item">
-                            <tr class="list">
+                            <tr class="list" id="tae_{$item.period_id}">
                                 <td>{$item.product_name}</td>
                                 <td>{$item.product_info}</td>
                                 <td>{$item.period_time}</td>
@@ -60,7 +60,7 @@
                     }, function(index) {
                         layer.close(index);
                          $.ajax({
-                                url: "",
+                                url: "prize",
                                 type: "POST",
                                 data: {
                                     period_id:target_id
@@ -70,6 +70,7 @@
                                         layer.open({
                                             content:"开奖成功"
                                         });
+                                        $("#tae_"+target_id).remove();
                                     }else{
                                         layer.open({
                                             content:"开奖失败"
