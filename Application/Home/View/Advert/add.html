@@ -15,9 +15,21 @@
                             <input type="text" placeholder=" 请填写广告位名称" class="input" style="width:320px;" name="title"/></span><br/>
                             链接：<span style="line-height:30px;">
                             <input type="text" placeholder=" 请填写跳转链接" class="input" style="width:320px;" name="linkurl"/></span><br/>
+                            指定商品：<span style="line-height:30px;">
+                            <!--<input type="text" placeholder=" 请填写备注" class="input" style="width:320px;" name="remark"/>-->
+                            <volist name='list' id='vo'>
+                                <div class="radio-box">
+                                    <input type="radio" id="radio" name="product_id" value={$vo.p_id}>
+                                    <label for="radio">{$vo.product_info}</label>
+                                </div>
+                                <!-- <label><input class="btn btn-default" name='product_id' type="radio" value=$vo.product_id>默认</label> -->
+                                <!-- <button class="btn btn-default" name='product_id' value={$vo.p_id} onClick="submitAction();return false;"> {$vo.product_info} </button>   -->
+                                <!-- <input class="btn btn-default" type="button" name='product_id' value={$vo.product_info} data={$vo.p_id}> -->
+                            </volist>
+                            </span><br/>
                             备注：<span style="line-height:30px;">
                             <input type="text" placeholder=" 请填写备注" class="input" style="width:320px;" name="remark"/></span><br/>
-                            上传商品图片：
+                            上传轮播图片：
                             <span style="line-height:30px;">
                                 <input type="file" id="exampleInputFile" name='file1'>
                             </span>
@@ -41,7 +53,7 @@
         </div>
         </form>
     </div>
-
+    <include file='Public/footer'/>
     <input type="hidden" id="ref_url" value="{$ref_url}" />
 
     <script>

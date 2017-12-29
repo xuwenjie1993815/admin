@@ -45,6 +45,10 @@ class AdvertController extends BaseController
      */
     public function add()
     {
+        if (!$_POST) {
+            $product_list = $this->getProductList();
+            $this->assign('list',$product_list);
+        }
         if (IS_GET) {
             $data['ref_url'] = $_SERVER['HTTP_REFERER'];
 
@@ -72,9 +76,10 @@ class AdvertController extends BaseController
                 //$ret = AdvertLogic::addCompany(I('post.title'));
                 $ret = M('advert')->add(array('title' => $_POST['title'],'remark' => $_POST['remark']));
                 if ($ret) {
-                    $data_list['aid'] = $ret['id'];
+                    $data_list['aid'] = $ret;
                     $data_list['imgurl'] = $path;
                     $data_list['linkurl'] = $_POST['linkurl'];
+                    $data_list['product_id'] = $_POST['product_id'];
                     $r = M('advert_list')->add($data_list);
                     if (!$r) {
                         $this->error('新增失败');
@@ -92,6 +97,18 @@ class AdvertController extends BaseController
                 // $this->ajaxReturn(returnData(0, $e->getMessage()));
             }
         }
+    }
+
+    //获取商品列表
+    public function getProductList()
+    {
+        $where = array('status_period'=>1);
+        $res = M('period')->alias("a")->field('period_id,images,period_time,product_info,target_num,now_num,p_id')->join("left join hyz_product as b on a.p_id = b.product_id")->where($where)->order($order_by)->select();
+        foreach ($res as $key => $value) {
+            $res[$key]['surplus_num']=$res[$key]['target_num']-$res[$key]['now_num'];
+            $res[$key]['images'] = explode(',', $value['images']);
+        }
+        return $res;
     }
 
 
