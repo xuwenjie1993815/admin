@@ -8,16 +8,26 @@
                     <table class="table table-hover">
                         <tr class="table-header border">
                             <th class="w15">广告位名称</th>
+                            <th class="w10">备注</th>
+                            <th class="w10">状态</th>
                             <th class="w10">操作</th>
                         </tr>
 
                         <tbody id="itemContainer">
+                        <a href="{:U('Advert/add')}" class="btn btn-warning btn-small">添加轮播</a>
                         <volist name="list" id="item">
                             <tr class="list">
                                 <td>{$item.title}</td>
+                                <td>{$item.remark}</td>
                                 <td>
-                                    <a href="{:U('Picture/add','id='.$item['id'])}" class="btn btn-warning btn-small">添加图片</a>
-                                    | <a href="{:U('Picture/index','id='.$item['id'])}" class="btn btn-success btn-small">修改信息</a>
+                                <if condition="$item['status'] eq 1 ">
+                                    已启用
+                                    <else/>
+                                    已删除
+                                </if></td>
+                                <td>
+                                    <a href="{:U('Advert/del','id='.$item['id'])}" class="btn btn-warning btn-small">删除</a>
+                                    | <a href="{:U('Advert/edit','id='.$item['id'])}" class="btn btn-success btn-small">修改信息</a>
                                 </td>
                             </tr>
                         </volist>

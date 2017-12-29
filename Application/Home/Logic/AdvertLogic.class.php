@@ -22,16 +22,15 @@ class AdvertLogic
     {
         $advert_model = new AdvertModel();
 
+        if(!$advert_model->create($data));
 
-        if(!$advert_model->create($data)) throw new Exception($advert_model->getError());
-
-        $advert_model->add();
+        $id = $advert_model->add();
 
         unset($advert_model);
 
 
 
-        return true;
+        return array('id' => $id);
     }
 
 

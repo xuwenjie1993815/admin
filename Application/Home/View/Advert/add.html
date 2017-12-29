@@ -2,7 +2,8 @@
 
 <block name="page-content">
     <div class="view-product">
-        <form id="ff">
+        <!-- <form id="ff"> -->
+        <form role="form" action='{:U("advert/add")}' method="post" enctype="multipart/form-data" onSubmit="return beforeSubmit(this);">
             <div class="info-center">
                 <div class="manage-head">
                     <h6 class="padding-left manage-head-con">添加广告位</h6>
@@ -10,8 +11,18 @@
 
                 <div class="offcial-table input-table table-margin clearfix ">
                     <div class="tr clearfix border-bottom padding-left-15">
-                        <div class="td w33">广告位名称：<span style="line-height:30px;">
-                            <input type="text" placeholder=" 请填写广告位名称" class="input" style="width:320px;" name="title"/></span></div>
+                        <div class="td w33">名称：<span style="line-height:30px;">
+                            <input type="text" placeholder=" 请填写广告位名称" class="input" style="width:320px;" name="title"/></span><br/>
+                            链接：<span style="line-height:30px;">
+                            <input type="text" placeholder=" 请填写跳转链接" class="input" style="width:320px;" name="linkurl"/></span><br/>
+                            备注：<span style="line-height:30px;">
+                            <input type="text" placeholder=" 请填写备注" class="input" style="width:320px;" name="remark"/></span><br/>
+                            上传商品图片：
+                            <span style="line-height:30px;">
+                                <input type="file" id="exampleInputFile" name='file1'>
+                            </span>
+
+                        </div>
                     </div>
                 </div>
 
@@ -19,7 +30,8 @@
                 <!--操作按钮 start-->
                 <div class="text-center padding-top">
                     <div class="td w80">
-                        <button type="submit" class="button bg-blue inlib-product" id="sub">提交</button>
+                         <input type="submit" class="btn btn-primary" value='提交'>
+                        <!-- <button type="submit" class="button bg-blue inlib-product" id="sub">提交</button> -->
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="javascript:history.go(-1)"><button type="button" class="button bg-gray inlib-product">返回</button></a>
                     </div>

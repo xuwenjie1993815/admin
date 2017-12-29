@@ -32,7 +32,7 @@ class AdvertController extends BaseController
             list($data['list'], $data['fpage']) = PubLogic::getListDataByPage(M('Advert'),$map);
 
             $data['title'] = $name;
-//            var_dump($data);exit;
+           // var_dump($data);exit;
 
             $this->assign($data)->display();
         }
@@ -52,22 +52,44 @@ class AdvertController extends BaseController
         }
 
         if (IS_POST) {
+            if ($_FILES['file1']['size']) {
+            $images = D('Support')->upload();
+            $config_path = C('UPLOAD_PATH');
+            foreach ($images as $k => $v) {
+               $path_all[]='http://'.$_SERVER['HTTP_HOST'].$config_path.$v;
+            }
+            $path = implode(',', $path_all);
+        }
+        if (!$_POST['title'] || !$_FILES['file1']['name']) {
+            $this->error('新增失败缺少参数');
+        }
 
             try {
                 $model = M();
 
                 $model->startTrans();
 
-                AdvertLogic::addCompany(I('post.'));
-
+                //$ret = AdvertLogic::addCompany(I('post.title'));
+                $ret = M('advert')->add(array('title' => $_POST['title'],'remark' => $_POST['remark']));
+                if ($ret) {
+                    $data_list['aid'] = $ret['id'];
+                    $data_list['imgurl'] = $path;
+                    $data_list['linkurl'] = $_POST['linkurl'];
+                    $r = M('advert_list')->add($data_list);
+                    if (!$r) {
+                        $this->error('新增失败');
+                    }
+                }else{
+                    $this->error('新增失败');
+                }
 
                 $model->commit();
 
-                $this->ajaxReturn(returnData(1, '添加广告位成功！'));
+                $this->success('添加成功', 'index');
             } catch (Exception $e) {
                 $model->rollback();
-
-                $this->ajaxReturn(returnData(0, $e->getMessage()));
+                $this->error($e->getMessage());
+                // $this->ajaxReturn(returnData(0, $e->getMessage()));
             }
         }
     }
@@ -118,5 +140,17 @@ class AdvertController extends BaseController
         }
     }
 
-
+    public function del(){
+       $id = $_GET['id'];
+       if (!$id) {
+           $this->error('删除失败');
+       }
+        $ret = M('advert')->where(array('id' => $id))->save(array('status' => 0));
+        $ret = M('advert_list')->where(array('aid' => $id))->save(array('status' => 0));
+        if ($ret) {
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
+        }
+    }
 }
