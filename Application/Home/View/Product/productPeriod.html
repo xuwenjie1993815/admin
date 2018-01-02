@@ -27,9 +27,10 @@
                                       <label for="exampleInputPassword1">目标数量</label>
                                       <input type="text" class="form-control" name='info' id='info'>
                                   </div>
-                                  <div class="form-group">
+                                  <div class="form-group" id="org">
                                       <label for="exampleInputPassword1">注意事项</label>
-                                      <textarea class="form-control" name='attention' id='attention'></textarea>
+                                      <input class="form-control git" name='attention[]' type='text'></input>
+                                      <input type="button" class="addInfo" onclick="add1();" value="添加注意事项" />
                                   </div>
                                   <input style="cursor: pointer;outline: none;" type="hidden" name="product_id" id="user-name" value="{$product_id}">
                                   <input type="submit" class="btn btn-primary" value='提交'>
@@ -59,11 +60,16 @@
             alert('目标数量不能为空！');
             return false;
             }
-            if($("#attention").val()==''){
+            if($(".git").val()==''){
             alert('注意事项不能为空！');
             return false;
             }
         }
+  function add1(){
+    $(".addInfo").remove();
+    var str="<input type='text' name='attention[]' class='form-control git'><input type='button' class='addInfo' onclick='add1();'' value='添加注意事项' />";
+    $("#org").append(str);
+  }
     </script>>
 
 </block>

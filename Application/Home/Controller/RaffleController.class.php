@@ -81,7 +81,7 @@ class RaffleController extends \Think\Controller
 	//活动开奖
 	public function activitiesDraw()
 	{
-		echo 1;
+		
 	}
 	//点赞开奖
 	public function likeDraw()

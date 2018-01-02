@@ -174,6 +174,7 @@ class ProductController extends \Think\Controller
         $attention = I('attention');
         $product_id = I('product_id');
         $product_id = addslashes($product_id);
+
         $res = M('period')->where(array('p_id'=>$product_id))->order('period_time desc')->find();
         if ($res['status_period'] ==1) {
             $this->error('新增失败,上期还没有完结');
@@ -182,6 +183,7 @@ class ProductController extends \Think\Controller
         $period_time = $res['period_time'];
         $period_time=$period_time+1;
         $admin_id= session('adminInfo');
+        $attention= implode(',', $attention);
         $data = array(
                 'p_id'=>$product_id,
                 'period_name'=>$name,
