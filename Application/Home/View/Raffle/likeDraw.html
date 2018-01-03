@@ -60,10 +60,10 @@
                     }, function(index) {
                         layer.close(index);
                          $.ajax({
-                                url: "prize",
+                                url: "likeDraw_run",
                                 type: "POST",
                                 data: {
-                                    period_id:target_id
+                                    apply_id:target_id
                                 },
                                 success:function(data){
                                     if (data.code==0) {

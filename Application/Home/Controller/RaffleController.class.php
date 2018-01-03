@@ -91,7 +91,7 @@ class RaffleController extends \Think\Controller
 		$Page->setConfig('prev','');
 		$Page->setConfig('next','');
 		$show= $Page->show();// 分页显示输出
-		$res = M('apply')->alias("a")->field('a.apply_id,b.activity_name,a.other_info,a.like_num,a.ctime')->join("left join hyz_activity as b on a.activity_id = b.activity_id")->where('like_num>=500')->order('a.ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('apply')->alias("a")->field('a.apply_id,b.activity_name,a.other_info,a.like_num,a.ctime')->join("left join hyz_activity as b on a.activity_id = b.activity_id")->where('like_num>=500 and is_draw=1')->order('a.ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		foreach ($res as $k=> $v) {
 			if (!$v['like_num']) {
 				$res[$k]['like_num']=0;
@@ -104,5 +104,42 @@ class RaffleController extends \Think\Controller
 		$this->assign('list',$res);
 		$this->assign('page',$show);
 		$this->display();
+	}
+	public function likeDraw_run()
+	{
+		$apply_id = I('apply_id');
+		$res = M('apply')->field('like_userid')->where(array('apply_id'=>$apply_id))->find();
+		$len = strlen($res['like_userid'])-2;
+		$user_id=  substr($res['like_userid'], 1,$len);
+		$arr_userid = explode(',', $user_id);
+		$rand = array_rand($arr_userid);
+		$win_user = $arr_userid[$rand];
+		//var_dump($win_user);
+		$winCode = 10000001+rand(10,99);
+		$indata = array(
+				'win_code'=>$winCode,
+				'win_type'=>2,
+				'user_id'=>$win_user,
+				'period_id'=>$apply_id,
+				'create_time'=>time()
+			);
+		$win = M('win')->add($indata);
+		if ($win) {
+			//修改期数的状态
+			$res =M('apply')->where(array('apply_id'=>$apply_id))->save(array('is_draw'=>2));
+		}
+		if ($res) {
+			$data = array(
+                'code'=>0,
+                'msg'=>'抽奖成功',
+                );
+           $this->ajaxReturn($data);
+		}else{
+			$data = array(
+                'code'=>1,
+                'msg'=>'抽奖失败',
+                );
+           $this->ajaxReturn($data);
+		}
 	}
 }
