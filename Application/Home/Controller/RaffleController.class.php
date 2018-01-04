@@ -18,12 +18,14 @@ class RaffleController extends \Think\Controller
 	//商品抽奖
 	public function index()
 	{
-		$count = M('period')->where('target_num=now_num and status_period=1')->count();
+		$admin_id= session('adminInfo');
+		$shop_id= $admin_id['id'];
+		$count = M('period')->where("target_num=now_num and status_period=1 and shop_id=$shop_id")->count();
         $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
         $Page->setConfig('prev','');
         $Page->setConfig('next','');
         $show= $Page->show();// 分页显示输出
-		$res = M('period')->alias("a")->field('period_id,product_name,product_info,period_time,create_time')->join("left join hyz_product as b on a.p_id = b.product_id")->where('target_num=now_num and status_period=1')->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('period')->alias("a")->field('period_id,product_name,product_info,period_time,create_time')->join("left join hyz_product as b on a.p_id = b.product_id")->where("target_num=now_num and status_period=1 and shop_id=$shop_id")->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('list',$res);
         $this->assign('page',$show);
 		$this->display();
@@ -81,17 +83,79 @@ class RaffleController extends \Think\Controller
 	//活动开奖
 	public function activitiesDraw()
 	{
-		
+		$admin_id= session('adminInfo');
+		$shop_id= $admin_id['id'];
+		$count = M('activity')->where("target_num=now_num and status=1 and shop_id=$shop_id")->count();
+        $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
+        $Page->setConfig('prev','');
+        $Page->setConfig('next','');
+        $show= $Page->show();// 分页显示输出
+		$res = M('activity')->where("target_num=now_num and status=1 and shop_id=$shop_id")->order('ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign('list',$res);
+        $this->assign('page',$show);
+		$this->display();
 	}
+	public function activitiesDraw_run()
+	{
+		$activity_id = I('activity_id');
+		$activity_id = addslashes($activity_id);
+		$info = M('activity')->where(array('activity_id'=>$activity_id))->find();
+		// $product_id = $info['p_id'];
+		// $period_time = $info['period_time'];
+		$order_begin = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2))->order('order_id')->limit(5)->select();
+		$order_end = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2))->order('order_id desc')->limit(5)->select();
+		foreach ($order_begin as $k => $v) {
+			$begin .= substr($order_begin[$k]['tel'], -2);
+		}
+		foreach ($order_end as $k => $v) {
+			$end .= substr($order_end[$k]['tel'], -2);
+		}
+		$like = ($begin+$end)%$info['target_num'];
+		$winCode = 10000001+$like;//中奖码 10000025
+		$winUser = M('order')->field('user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2,'lottery_code'=>array("like","%$winCode%")))->select();
+		foreach ($winUser as $k => $v) {
+			$user_id[]=$v['user_id'];
+		}
+		$user_id= implode(',', $user_id);//中奖的人
+
+		$indata = array(
+				'win_code'=>$winCode,
+				'win_type'=>3,
+				'user_id'=>$user_id,
+				'period_id'=>$activity_id,
+				'create_time'=>time()
+			);
+		$win = M('win')->add($indata);
+		if ($win) {
+			//修改期数的状态
+			$res =M('activity')->where(array('activity_id'=>$activity_id))->save(array('status'=>2));
+		}
+		if ($res) {
+			$data = array(
+                'code'=>0,
+                'msg'=>'抽奖成功',
+                );
+           $this->ajaxReturn($data);
+		}else{
+			$data = array(
+                'code'=>1,
+                'msg'=>'抽奖失败',
+                );
+           $this->ajaxReturn($data);
+		}
+	}
+
 	//点赞开奖
 	public function likeDraw()
 	{
-		$count = M('apply')->where('like_num>=500 and is_draw!=2')->count();
+		$admin_id= session('adminInfo');
+		$shop_id= $admin_id['id'];
+		$count = M('apply')->where("like_num>=500 and is_draw!=2 and shop_id=$shop_id")->count();
 		$Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
 		$Page->setConfig('prev','');
 		$Page->setConfig('next','');
 		$show= $Page->show();// 分页显示输出
-		$res = M('apply')->alias("a")->field('a.apply_id,b.activity_name,a.other_info,a.like_num,a.ctime')->join("left join hyz_activity as b on a.activity_id = b.activity_id")->where('like_num>=500 and is_draw=1')->order('a.ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('apply')->alias("a")->field('a.apply_id,b.activity_name,a.other_info,a.like_num,a.ctime')->join("left join hyz_activity as b on a.activity_id = b.activity_id")->where("like_num>=500 and is_draw!=2 and shop_id=$shop_id")->order('a.ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		foreach ($res as $k=> $v) {
 			if (!$v['like_num']) {
 				$res[$k]['like_num']=0;
