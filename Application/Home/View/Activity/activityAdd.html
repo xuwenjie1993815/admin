@@ -8,29 +8,56 @@
                               Basic Forms
                           </header> -->
                           <div class="panel-body">
-                              <form role="form"  id="form-notice-add" method="post" enctype="multipart/form-data" onSubmit="return beforeSubmit(this);">
+                          <!-- 活动图片，标题，内容。参与价格，点赞价格，参与活动奖励，点赞活动奖励 -->
+                              <form role="form"  method="post" enctype="multipart/form-data" onSubmit="return beforeSubmit(this);">
 	                              <div class="form-group">
 	                                  <label for="exampleInputEmail1">标题</label>
-	                                  <input type="text" class="form-control" name='notice_title' id='notice_title'>
+	                                  <input type="text" class="form-control" name='title' id='title'>
 	                              </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">活动名</label>
+                                    <input type="text" class="form-control" name='activity_name' id='activity_name'>
+                                </div>
+
+                                上传活动图片：
+                                <span style="line-height:30px;">
+                                    <input type="file" id="exampleInputFile" name='images'>
+                                </span>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">目标人数</label>
+                                    <input type="number" class="form-control"  name='target_num' id='target_num'>
+                                </div>
+
+                                <div class="form-group">
+                                <label for="exampleInputPassword1">截止时间</label>
+                                <input type="text" onfocus="WdatePicker()" id="stop_time" name="stop_time" value="{$_GET['stop_time']}" class="input-text Wdate" placeholder="截止时间" style="width:120px;">
+                                </div>
+
 	                              <div class="form-group">
-	                                  <label for="exampleInputPassword1">指定接收用户手机号</label>
-	                                  <input type="text" class="form-control"  name='user_tel' id='user_tel'>
+	                                  <label for="exampleInputPassword1">参与活动价格</label>
+	                                  <input type="number" class="form-control"  name='price' id='price'>
 	                              </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">活动点赞价格</label>
+                                    <input type="number" class="form-control"  name='like_price' id='like_price'>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">点赞介绍</label>
+                                    <input type="text" class="form-control"  name='like_info' id='like_info'>
+                                </div>
 	                              <!-- <div class="form-group">
 	                                  <label for="exampleInputPassword1">类型</label>
 	                                  <input type="text" class="form-control" name='info' id='info'>
 	                              </div> -->
 	                              <label for="exampleInputPassword1">类型</label>
-	                             <select class="form-control input-lg m-bot15" name='type'>
-	                                          <option value='1'>获奖通知</option>
-	                                          <option value='2'>公告</option>
+	                             <select class="form-control input-lg m-bot15" name='activity_type'>
+	                                          <option value='1'>默认类型</option>
 	                             </select>
                                   <!-- 加载编辑器的容器 -->
-						        <div class="form-group">
-						        	<label for="exampleInputPassword1">内容</label>
-						        	<script id="content" name="content" type="text/plain" ></script>
-						        </div>
+          						        <div class="form-group">
+          						        	<label for="exampleInputPassword1">活动详情</label>
+          						        	<script id="activity_info" name="activity_info" type="text/plain" ></script>
+          						        </div>
 
 
                     
@@ -45,6 +72,7 @@
     </div>
 	<!--_footer 作为公共模版分离出去-->
 	<include file="Public/footer"/>
+    <script type="text/javascript" src="__PUBLIC__/My97DatePicker/4.8/WdatePicker.js"></script>
     <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
 	<!-- 编辑器源码文件 -->
@@ -53,8 +81,24 @@
 
     <script type="text/javascript">
         function beforeSubmit(form){
-            if($("#notice_title").val()==''){
+            if($("#title").val()==''){
             alert('标题不能为空！');
+            return false;
+            }
+            if($("#target_num").val()==''){
+            alert('请设置目标人数');
+            return false;
+            }
+            if($("#stop_time").val()==''){
+            alert('请设置活动截止时间');
+            return false;
+            }
+            if($("#price").val()==''){
+            alert('请设置活动价格');
+            return false;
+            }
+            if($("#like_price").val()==''){
+            alert('请设置活动点赞价格');
             return false;
             }
         }
@@ -62,7 +106,7 @@
 <script type="text/javascript">
     // var editor = UE.getEditor('container');
     var editor = new UE.ui.Editor({initialFrameHeight:400,initialFrameWidth:750});
-    editor.render("content");
+    editor.render("activity_info");
 </script>
 </block>
 
