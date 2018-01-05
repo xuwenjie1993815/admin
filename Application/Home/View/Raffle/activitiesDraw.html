@@ -1,0 +1,88 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+            <form role="form" method="POST">
+                <div class="search_style table-margin">
+                    <div class="title_names text-blue">活动开奖列表</div>
+                    <ul class="search_content clearfix">
+                        <!-- <li class='w30'>
+                            <input type="text" placeholder="商品名字" value="{$product_name}" class="w100 height34 border" id="product_name" name='product_name'>
+                        </li>
+                        <li class=''><button type="submit" class="btn btn-success" id="" name="">搜索</button></li> -->
+                        <!-- <li class=''><button class="btn_search button bg-blue" id="search"><i class="fa fa-search"></i> 搜索</button></li> -->
+                        <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
+                    </ul>
+                </div>
+            </form>
+            <div class="table-margin ">
+                <notempty  name="list">
+                    <table class="table table-hover">
+                        <tr class="table-header border">
+                            <th class="w10">活动名</th>
+                            <th class="w20">活动详情</th>
+                            <th class="w10">目标人数</th>
+                            <th class="w15">创建时间</th>
+                            <th class="w15">抽奖操作</th>
+                        </tr>
+
+                        <tbody id="itemContainer">
+                        <volist name="list" id="item">
+                            <tr class="list" id="tae_{$item.activity_id}">
+                                <td>{$item.activity_name}</td>
+                                <td>{$item.activity_info}</td>
+                                <td>{$item.target_num}</td>
+                                <td>{$item.ctime|date='Y-m-d H:i', ###}</td>
+                                <td>
+                                    <img src="__PUBLIC__/admin/img/jiang.jpg" class='del' alt="{$item.activity_id}" title="抽奖" style="width:35px;height:30px">
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+
+                    </table>
+                    <else/>
+                    <div style="text-align:center"><span style="color:#CCCCCC;font-size:18px">没有符合条件的记录</span></div>
+                </notempty >
+            </div>
+            <!-- fpage -->
+            <div class="page" style="text-align:center">{$page}</div>
+        </div>
+    </div>
+
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+            $('.del').click(function(event) {
+                var target_id = $(this).attr("alt");
+                layer.confirm('确认要抽奖吗？', {
+                        btn : [ '确定', '取消' ]//按钮
+                    }, function(index) {
+                        layer.close(index);
+                         $.ajax({
+                                url: "activitiesDraw_run",
+                                type: "POST",
+                                data: {
+                                    activity_id:target_id
+                                },
+                                success:function(data){
+                                    if (data.code==0) {
+                                        layer.open({
+                                            content:"开奖成功"
+                                        });
+                                        $("#tae_"+target_id).remove();
+                                    }else{
+                                        layer.open({
+                                            content:"开奖失败"
+                                        });
+                                    }
+                               },
+                       });
+                    }); 
+                event.stopPropagation();
+               
+            });
+    </script>>
+
+</block>
+

@@ -25,7 +25,7 @@ class RaffleController extends \Think\Controller
         $Page->setConfig('prev','');
         $Page->setConfig('next','');
         $show= $Page->show();// 分页显示输出
-		$res = M('period')->alias("a")->field('period_id,product_name,product_info,period_time,create_time')->join("left join hyz_product as b on a.p_id = b.product_id")->where("target_num=now_num and status_period=1 and shop_id=$shop_id")->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('period')->alias("a")->field('period_id,product_name,product_info,period_time,create_time')->join("left join hyz_product as b on a.p_id = b.product_id")->where("target_num=now_num and status_period=1 and a.shop_id=$shop_id")->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('list',$res);
         $this->assign('page',$show);
 		$this->display();
@@ -150,12 +150,12 @@ class RaffleController extends \Think\Controller
 	{
 		$admin_id= session('adminInfo');
 		$shop_id= $admin_id['id'];
-		$count = M('apply')->where("like_num>=500 and is_draw!=2 and shop_id=$shop_id")->count();
+		$count = M('apply')->where("like_num>=500 and is_draw!=2")->count();
 		$Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
 		$Page->setConfig('prev','');
 		$Page->setConfig('next','');
 		$show= $Page->show();// 分页显示输出
-		$res = M('apply')->alias("a")->field('a.apply_id,b.activity_name,a.other_info,a.like_num,a.ctime')->join("left join hyz_activity as b on a.activity_id = b.activity_id")->where("like_num>=500 and is_draw!=2 and shop_id=$shop_id")->order('a.ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('apply')->alias("a")->field('a.apply_id,b.activity_name,a.other_info,a.like_num,a.ctime')->join("left join hyz_activity as b on a.activity_id = b.activity_id")->where("like_num>=500 and is_draw!=2")->order('a.ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		foreach ($res as $k=> $v) {
 			if (!$v['like_num']) {
 				$res[$k]['like_num']=0;
