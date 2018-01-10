@@ -20,12 +20,19 @@ class RaffleController extends \Think\Controller
 	{
 		$admin_id= session('adminInfo');
 		$shop_id= $admin_id['id'];
-		$count = M('period')->where("target_num=now_num and status_period=1 and shop_id=$shop_id")->count();
+		if ($admin_id['role_id']==0) {
+			$where = "target_num=now_num and status_period=1";
+			$where1 ="target_num=now_num and status_period=1";
+		}else{
+			$where = "target_num=now_num and status_period=1 and shop_id=$shop_id";
+			$where1 ="target_num=now_num and status_period=1 and a.shop_id=$shop_id";
+		}
+		$count = M('period')->where($where)->count();
         $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
         $Page->setConfig('prev','');
         $Page->setConfig('next','');
         $show= $Page->show();// 分页显示输出
-		$res = M('period')->alias("a")->field('period_id,product_name,product_info,period_time,create_time')->join("left join hyz_product as b on a.p_id = b.product_id")->where("target_num=now_num and status_period=1 and a.shop_id=$shop_id")->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('period')->alias("a")->field('period_id,product_name,product_info,period_time,create_time')->join("left join hyz_product as b on a.p_id = b.product_id")->where($where1)->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('list',$res);
         $this->assign('page',$show);
 		$this->display();
@@ -38,8 +45,8 @@ class RaffleController extends \Think\Controller
 		$info = M('period')->where(array('period_id'=>$period_id))->find();
 		$product_id = $info['p_id'];
 		$period_time = $info['period_time'];
-		$order_begin = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id))->order('order_id')->limit(5)->select();
-		$order_end = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id))->order('order_id desc')->limit(5)->select();
+		$order_begin = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'order_status'=>1))->order('order_id')->limit(5)->select();
+		$order_end = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'order_status'=>1))->order('order_id desc')->limit(5)->select();
 		foreach ($order_begin as $k => $v) {
 			$begin .= substr($order_begin[$k]['tel'], -2);
 		}
@@ -48,23 +55,26 @@ class RaffleController extends \Think\Controller
 		}
 		$like = ($begin+$end)%$info['target_num'];
 		$winCode = 10000001+$like;//中奖码 10000025
-		$winUser = M('order')->field('user_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'lottery_code'=>array("like","%$winCode%")))->select();
+		$winUser = M('order')->field('user_id,order_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'lottery_code'=>array("like","%$winCode%")))->select();
 		foreach ($winUser as $k => $v) {
-			$user_id[]=$v['user_id'];
+			$winUser[$k]['period_id'] = $period_id;
+			$winUser[$k]['ctime'] = time();
+			$winUser[$k]['reward_number'] = $winCode;
+			$winUser[$k]['shop_name'] = '永筹科技';
+			$winUser[$k]['shop_address'] = '永川文理学院北门';
+			$winUser[$k]['win_type'] = '1';
+			$order_id[] = $v['order_id'];
 		}
-		$user_id= implode(',', $user_id);//中奖的人
-		//中奖信息加入数据库
-		$indata = array(
-				'win_code'=>$winCode,
-				'win_type'=>1,
-				'user_id'=>$user_id,
-				'period_id'=>$period_id,
-				'create_time'=>time()
-			);
-		$win = M('win')->add($indata);
-		if ($win) {
-			//修改期数的状态
-			$res =M('period')->where(array('period_id'=>$period_id))->save(array('status_period'=>2));
+		if ($winUser) {
+			$win = M('reward')->addAll($winUser);
+		}
+		//修改期数的状态
+		$res =M('period')->where(array('period_id'=>$period_id))->save(array('status_period'=>2));
+		if ($res) {
+			$map['order_id']  = array('in',$order_id);
+			$update= M('order')->where($map)->save(array('order_status'=>2));
+			$map1['order_id']  = array('not in',$order_id);
+			$update1= M('order')->where($map1)->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'order_status'=>1))->save(array('order_status'=>5));
 		}
 		if ($res) {
 			$data = array(
@@ -85,12 +95,17 @@ class RaffleController extends \Think\Controller
 	{
 		$admin_id= session('adminInfo');
 		$shop_id= $admin_id['id'];
-		$count = M('activity')->where("target_num=now_num and status=1 and shop_id=$shop_id")->count();
+		if ($admin_id['role_id']==0) {
+			$where = "target_num=now_num and status=1";
+		}else{
+			$where = "target_num=now_num and status=1 and shop_id=$shop_id";
+		}
+		$count = M('activity')->where($where)->count();
         $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
         $Page->setConfig('prev','');
         $Page->setConfig('next','');
         $show= $Page->show();// 分页显示输出
-		$res = M('activity')->where("target_num=now_num and status=1 and shop_id=$shop_id")->order('ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res = M('activity')->where($where)->order('ctime desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('list',$res);
         $this->assign('page',$show);
 		$this->display();
@@ -102,8 +117,8 @@ class RaffleController extends \Think\Controller
 		$info = M('activity')->where(array('activity_id'=>$activity_id))->find();
 		// $product_id = $info['p_id'];
 		// $period_time = $info['period_time'];
-		$order_begin = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2))->order('order_id')->limit(5)->select();
-		$order_end = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2))->order('order_id desc')->limit(5)->select();
+		$order_begin = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2,'order_status'=>1))->order('order_id')->limit(5)->select();
+		$order_end = M('order')->alias('o')->field('u.tel')->join('left join hyz_user as u on o.user_id=u.user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2,'order_status'=>1))->order('order_id desc')->limit(5)->select();
 		foreach ($order_begin as $k => $v) {
 			$begin .= substr($order_begin[$k]['tel'], -2);
 		}
@@ -112,23 +127,28 @@ class RaffleController extends \Think\Controller
 		}
 		$like = ($begin+$end)%$info['target_num'];
 		$winCode = 10000001+$like;//中奖码 10000025
-		$winUser = M('order')->field('user_id')->where(array('activity_id'=>$activity_id,'order_type'=>2,'lottery_code'=>array("like","%$winCode%")))->select();
+		$winUser = M('order')->field('user_id,order_id')->where(array('activity_id'=>$activity_id,'order_type'=>2,'lottery_code'=>array("like","%$winCode%")))->select();
 		foreach ($winUser as $k => $v) {
-			$user_id[]=$v['user_id'];
+			$winUser[$k]['period_id'] = $activity_id;
+			$winUser[$k]['ctime'] = time();
+			$winUser[$k]['reward_number'] = $winCode;
+			$winUser[$k]['shop_name'] = '永筹科技';
+			$winUser[$k]['shop_address'] = '永川文理学院北门';
+			$winUser[$k]['win_type'] = '3';
+			$order_id[] = $v['order_id'];
 		}
-		$user_id= implode(',', $user_id);//中奖的人
-
-		$indata = array(
-				'win_code'=>$winCode,
-				'win_type'=>3,
-				'user_id'=>$user_id,
-				'period_id'=>$activity_id,
-				'create_time'=>time()
-			);
-		$win = M('win')->add($indata);
-		if ($win) {
+		if ($winUser) {
+			$win = M('reward')->addAll($winUser);
+		}
+		//if ($win) {
 			//修改期数的状态
 			$res =M('activity')->where(array('activity_id'=>$activity_id))->save(array('status'=>2));
+		//}
+		if ($res) {
+			$map['order_id']  = array('in',$order_id);
+			$update= M('order')->where($map)->save(array('order_status'=>2));
+			$map1['order_id']  = array('not in',$order_id);
+			$update1= M('order')->where($map1)->where(array('activity_id'=>$activity_id,'order_type'=>2,'order_status'=>1))->save(array('order_status'=>5));
 		}
 		if ($res) {
 			$data = array(
@@ -179,15 +199,17 @@ class RaffleController extends \Think\Controller
 		$rand = array_rand($arr_userid);
 		$win_user = $arr_userid[$rand];
 		//var_dump($win_user);
-		$winCode = 10000001+rand(10,99);
-		$indata = array(
-				'win_code'=>$winCode,
-				'win_type'=>2,
-				'user_id'=>$win_user,
-				'period_id'=>$apply_id,
-				'create_time'=>time()
-			);
-		$win = M('win')->add($indata);
+		$winCode = 10000001+rand(10,99);//没用
+		$order_id = M('order')->field('order_id')->where(array('user_id'=>$win_user,'apply_id'=>$apply_id))->find();
+		$winUser['user_id'] = $win_user;
+		$winUser['order_id'] = $order_id;
+		$winUser['period_id'] = $apply_id;
+		$winUser['ctime'] = time();
+		$winUser['reward_number'] = $winCode;
+		$winUser['shop_name'] = '永筹科技';
+		$winUser['shop_address'] = '永川文理学院北门';
+		$winUser['win_type'] = '2';
+		$win = M('reward')->add($winUser);
 		if ($win) {
 			//修改期数的状态
 			$res =M('apply')->where(array('apply_id'=>$apply_id))->save(array('is_draw'=>2));
