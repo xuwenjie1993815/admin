@@ -8,6 +8,7 @@ class IndexController extends \Base\Controller\BaseController
 {
     public function index()
     {
+        // var_dump($this->getMenu());die;
         if(IS_POST)
         {
             
@@ -48,9 +49,21 @@ class IndexController extends \Base\Controller\BaseController
         $menuModel->setRelationFields('node','id,title as text,name, sort');
         $menuModel->setRelationCondition('node','ismenu=1');
         $data=$menuModel->field('id,pid,name as text,url')->order('sort asc')->relation(true)->select();
-        
+        //处理菜单显示
+          
+        $nodeid = M('role_node')->field('nodeid')->where(array('roleid' => $_SESSION['adminInfo']['role_id']))->select();  
+        // foreach ($_SESSION['adminAccess'] as $key => $value) {
+        //     $aa[] = substr($value,strpos($value,'e/')+2);
+        // }
+        foreach ($nodeid as $key => $value) {
+            $n_nodeid[] = M('node')->where(array('id' => $value['nodeid']))->getfield('groupid');
+        }
         foreach($data as $key=>$val)
         {
+            if (!in_array($val['id'], $n_nodeid)) {
+                unset($data[$key]);
+                continue;
+            }
             foreach($val['node'] as $k=>$v)
             {
                 $val['node'][$k]['url']=U($v['name'],'','html',true);
@@ -62,7 +75,8 @@ class IndexController extends \Base\Controller\BaseController
             $data[$key]['children']=$val['node'];
             unset($data[$key]['node']);
         }
-        return array_to_tree($data);
+        // var_dump(array_values($data));die;
+        return array_to_tree(array_values($data));
     }
 
 

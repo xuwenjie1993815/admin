@@ -31,7 +31,6 @@ class BaseController extends \Think\Controller
         // 当前用户为超级管理员
         if ($username === C('SUPER_ADMIN_NAME') && C('OPEN_SUPER_ADMIN') == 1) return true;
 		if ($username === C('SUPER_ADMIN_NAME_TWO') && C('OPEN_SUPER_ADMIN_TWO') == 1) return true;
-
         // 获取权限
         if(session('?adminAccess'))
         {
@@ -44,7 +43,7 @@ class BaseController extends \Think\Controller
             $roleAccess = M('roleNode')->where(array('roleid' => $roleid))->getField('nodeid', true);//权限id
 
             $myaccess = $roleAccess;
-//            dump($myaccess);
+           // dump($myaccess);
             
             if (empty($myaccess)) {
                 echo '请联系管理员分配权限';
@@ -57,18 +56,17 @@ class BaseController extends \Think\Controller
         }
 
         $thisNode = strtolower(MODULE_NAME . '/' . CONTROLLER_NAME . '/' . ACTION_NAME);
-        
         if (!in_array($thisNode, $access))
         {
-            if(!in_array_case($thisNode, C('IGNORES')))
-            {
-                if (IS_AJAX) {
-                    $this->ajaxReturn(array('status' => 0, 'msg' => '权限不足！', 'data'=>array('access'=>$access, 'node'=>$thisNode)));
-                    $this->U('Home/Pub/login');
-                } else {
-                    $this->error('权限不足！',U('Home/Pub/login'));
-                }
-            }
+            // if(!in_array_case($thisNode, C('IGNORES')))
+            // {
+            //     if (IS_AJAX) {
+            //         $this->ajaxReturn(array('status' => 0, 'msg' => '权限不足！', 'data'=>array('access'=>$access, 'node'=>$thisNode)));
+            //         $this->U('Home/Pub/login');
+            //     } else {
+            //         $this->error('权限不足！',U('Home/Pub/login'));
+            //     }
+            // }
         }
     }
 
