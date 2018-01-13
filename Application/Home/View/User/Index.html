@@ -2,7 +2,7 @@
 <block name="page-content">
     <div class="view-product">
         <div class="info-center">
-            <div class="search_style table-margin">
+            <!-- <div class="search_style table-margin">
                 <div class="title_names text-blue">用户列表</div>
                 <ul class="search_content clearfix">
                     <li class='w30'>
@@ -12,8 +12,20 @@
                     <li class=''><button class="btn_search button bg-blue" id="search"><i class="fa fa-search"></i> 搜索</button></li>
                     <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
                 </ul>
-            </div>
-
+            </div> -->
+            <form role="form" method="get">
+                <div class="search_style table-margin">
+                    <div class="title_names text-blue">用户列表</div>
+                    <ul class="search_content clearfix">
+                        <li class='w30'>
+                            <input type="text" placeholder=" 请填写用户电话" value="{$tel}" class="w100 height34 border" id="tel" name='tel'>
+                        </li>
+                        <li class=''><button type="submit" class="btn btn-success" id="" name="">搜索</button></li>
+                        <!-- <li class=''><button class="btn_search button bg-blue" id="search"><i class="fa fa-search"></i> 搜索</button></li> -->
+                        <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
+                    </ul>
+                </div>
+            </form>
             <div class="table-margin ">
                 <notempty  name="list">
                     <table class="table table-hover">

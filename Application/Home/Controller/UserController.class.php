@@ -17,20 +17,20 @@ class UserController extends BaseController
     //用户列表
     public function index()
     {
-        if (IS_GET) {
+        //if (IS_GET) {
             $tel = I('tel/s', '');
-
+            //var_dump($tel);die;
             $map = array();
 
-            if (!empty($name)) $map['$tel'] = array('like', "%{$tel}%");
+            if (!empty($tel)) $map['tel'] = array('like', "%{$tel}%");
 
             list($data['list'], $data['fpage']) = PubLogic::getListDataByPage(M('User'),$map);
 
-            $data['tel'] = $name;
+            $data['tel'] = $tel;
 //            var_dump($data);exit;
 
             $this->assign($data)->display();
-        }
+        //}
     }
 
 }
