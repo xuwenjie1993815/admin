@@ -1,0 +1,65 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+            <div class="search_style table-margin">
+                <div class="title_names text-blue">商品审核</div>
+               <!--  <ul class="search_content clearfix">
+                    <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
+                </ul> -->
+            </div>
+                 <div class="col-lg-6">
+                      <section class="panel">
+                         <!--  <header class="panel-heading">
+                              Basic Forms
+                          </header> -->
+                          <div class="panel-body">
+                              <!-- <form role="form" action='' method="post"> -->
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">商品名称</label>
+                                      <input type="text" class="form-control" name='name' id='name' value="{$info.product_name}" readonly>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">价格</label>
+                                      <input type="text" class="form-control"  name='price' id='price' value="{$info.price}" readonly>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">产品详情</label>
+                                      <input type="text" class="form-control" name='info' id='info' value="{$info.product_info}" readonly>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1">商品类型</label>
+                                      <input type="text" class="form-control" name='info' id='info1' value="{$info.product_type}" readonly>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputFile">商品图片</label>
+                                      <volist name="img" id="vo">
+                                        <img src="{$vo}" style="width:100px;height:100px">
+                                      </volist>
+                                  </div>
+                                  <input style="cursor: pointer;outline: none;" type="hidden" name="product_id" id="user-name" value="{$info.product_id}">
+                                  <div class='zhixing'>
+                                  <a href="{:U("Product/approval")}?product_id={$info.product_id}&type={$type}&style=1"><button class="btn btn-primary">通过</button></a>
+                                  <a href="{:U("Product/approval")}?product_id={$info.product_id}&type={$type}&style=2"><button class="btn btn-primary">拒绝</button></a>
+                                  </div>
+                              <!-- </form> -->
+
+                          </div>
+                      </section>
+                  </div>
+        </div>
+    </div>
+    <style type="text/css">
+      .zhixing{
+        text-align: center;
+      }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        
+    </script>>
+
+</block>
+

@@ -1,21 +1,28 @@
 <extend name="../../Home/View/Public/base" />
+
+</style>
 <block name="page-content">
     <div class="view-product">
         <div class="info-center">
             <form role="form" method="POST">
                 <div class="search_style table-margin">
-                    <div class="title_names text-blue">商品列表</div>
+                    <div class="title_names text-blue">审批列表</div>
                     <ul class="search_content clearfix">
-                        <li class='w30'>
+                        <!-- <li class='w30'>
                             <input type="text" placeholder="商品名字" value="{$product_name}" class="w100 height34 border" id="product_name" name='product_name'>
-                        </li>
-                        <li class=''><button type="submit" class="btn btn-success" id="" name="">搜索</button></li>
+                        </li> -->
+                       <!--  <li class=''><button type="submit" class="btn btn-success" id="" name="">搜索</button></li> -->
                         <!-- <li class=''><button class="btn_search button bg-blue" id="search"><i class="fa fa-search"></i> 搜索</button></li> -->
                         <li class=''><a href="{:U()}"><button class="btn_search button bg-orange">刷新</button></a></li>
                     </ul>
                 </div>
             </form>
-            <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a href="{:U("Product/goodsAdd")}" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">{$list.page}</span> </div>
+            <div class='state'>
+                <span class='type'><a href="review?type=2">待审核</a></span> 
+                <span class='type'><a href="review?type=3">待复核</a></span> 
+                <span class='type'><a href="review?type=4">确认上架</a></span>
+            </div>
+            
             <div class="table-margin ">
                 <notempty  name="list">
                     <table class="table table-hover">
@@ -48,23 +55,13 @@
                                 <td>{$item.ctime|date='Y-m-d H:i', ###}</td>
                                 <eq name="item.status" value="1" >
                                     <td><span class="text-green">已启用</span></td>
-                                </eq>
-                                <eq name="item.status" value="2" >
+                                    <else/>
                                     <td><span class="text-red">待审核</span></td>
                                 </eq>
-                                <eq name="item.status" value="3" >
-                                    <td><span class="text-red">待复核</span></td>
-                                </eq>
-                                <eq name="item.status" value="4" >
-                                    <td><span class="text-red">待上架</span></td>
-                                </eq>
-                                <eq name="item.status" value="5" >
-                                    <td><span class="text-red">已拒绝</span></td>
-                                </eq>
                                 <td>
-                                    <img src="__PUBLIC__/admin/img/z.png" class='del' alt="{$item.product_id}" title="删除">&nbsp;&nbsp;
-                                    <a href="{:U("Product/productEditor")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji' title="修改"></a>&nbsp;&nbsp;
-                                    <a href="{:U("Product/productPeriod")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/jia.png" class='jia' title="添加期次"></a>
+                                    <!-- <img src="__PUBLIC__/admin/img/z.png" class='del' alt="{$item.product_id}" title="删除">&nbsp;&nbsp; -->
+                                    <a href="{:U("Product/detail")}?product_id={$item.product_id}&type={$item.status}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji' title="查看详情"></a>&nbsp;&nbsp;
+                                    <!-- <a href="{:U("Product/productPeriod")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/jia.png" class='jia' title="添加期次"></a> -->
                                 </td>
                             </tr>
                         </volist>
@@ -79,7 +76,15 @@
             <div class="page" style="text-align:center">{$page}</div>
         </div>
     </div>
-
+    <style type="text/css">
+    .state{
+        text-align: center;
+    }
+    .type a{
+        margin-left: 100px;
+        color: #f60 !important;
+    }
+    </style>
     <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
 
     <script type="text/javascript">

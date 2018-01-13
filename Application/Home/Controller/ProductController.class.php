@@ -27,6 +27,7 @@ class ProductController extends \Think\Controller
         if ($role['role_id'] !=0) {
             $where['shop_id']=$role['id'];
         }
+        //$where['status']=1;
         $count = $goods->where($where)->count();
         $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
         $Page->setConfig('prev','');
@@ -42,6 +43,23 @@ class ProductController extends \Think\Controller
         foreach ($rst as $k => $v) {
             $one=explode(',', $v['images']);
             $rst[$k]['images'] = $one[0];
+            switch ($v['product_type']) {
+                case '2':
+                    $rst[$k]['product_type']='旅游摄影';
+                    break;
+                case '3':
+                    $rst[$k]['product_type']='旅游项目';
+                    break;
+                case '4':
+                    $rst[$k]['product_type']='健身器材';
+                    break;
+                case '5':
+                    $rst[$k]['product_type']='生活用品';
+                    break;
+                default:
+                    # code...
+                    break;
+            }
         }
         $this->assign('list',$rst);
         $this->assign('product_name',$goods_name);
@@ -75,7 +93,7 @@ class ProductController extends \Think\Controller
                 'product_name'=>$name,
                 'price'=>$price,
                 'images'=>$path,
-                'status'=>1,
+                'status'=>2,
                 'ctime'=>time(),
                 'product_type'=>$type,
                 'product_info'=>$info,
@@ -142,6 +160,7 @@ class ProductController extends \Think\Controller
                 'change_time'=>time(),
                 'product_type'=>$type,
                 'product_info'=>$info,
+                'status'=>2,
             );
         }else{
             $data = array(
@@ -150,6 +169,7 @@ class ProductController extends \Think\Controller
                 'change_time'=>time(),
                 'product_type'=>$type,
                 'product_info'=>$info,
+                'status'=>2,
                 );
         }
         $res = M('product')->where(array('product_id'=>$product_id))->save($data);
@@ -163,6 +183,11 @@ class ProductController extends \Think\Controller
     public function productPeriod()
     {
        $product_id = I('product_id');
+       $check = M('product')->field('status')->where(array('product_id'=>$product_id))->find();
+       if ($check['status'] !=1) {
+            $this->error('新增失败,商品还没有通过审核');
+            die;
+        }
        $this->assign('product_id',$product_id);
        $this->display();
     }
@@ -174,7 +199,6 @@ class ProductController extends \Think\Controller
         $attention = I('attention');
         $product_id = I('product_id');
         $product_id = addslashes($product_id);
-
         $res = M('period')->where(array('p_id'=>$product_id))->order('period_time desc')->find();
         if ($res['status_period'] ==1) {
             $this->error('新增失败,上期还没有完结');
@@ -200,6 +224,110 @@ class ProductController extends \Think\Controller
             $this->success('新增成功', 'productList');
         }else{
             $this->error('新增失败');
+        }
+    }
+    //商品审批
+    public function review()
+    {
+       $type = I('type')?I('type'):2;
+       $goods = M('product');
+       $count = $goods->where(array('status'=>$type))->count();
+        $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
+        $Page->setConfig('prev','');
+        $Page->setConfig('next','');
+        // if($status !=-1 && $status !=''){ //按商品状态查询
+        //     $where['status'] = $status;
+        // }
+        // foreach($where as $key=>$goods_name) {
+        //       $Page->parameter[$key]=urlencode($goods_name);
+        // }
+        $show= $Page->show();// 分页显示输出
+        $rst = $goods->where(array('status'=>$type))->order('product_id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+        foreach ($rst as $k => $v) {
+            $one=explode(',', $v['images']);
+            $rst[$k]['images'] = $one[0];
+            switch ($v['product_type']) {
+                case '2':
+                    $rst[$k]['product_type']='旅游摄影';
+                    break;
+                case '3':
+                    $rst[$k]['product_type']='旅游项目';
+                    break;
+                case '4':
+                    $rst[$k]['product_type']='健身器材';
+                    break;
+                case '5':
+                    $rst[$k]['product_type']='生活用品';
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+        }
+       $this->assign('list',$rst);
+       $this->assign('type',$type);
+       $this->assign('page',$show);
+       $this->display();
+    }
+    //查看商品详情
+    public function detail()
+    {
+        $product_id = I('product_id');
+        $type = I('type');
+        $product_id = addslashes($product_id);
+        $res = M('product')->where(array('product_id'=>$product_id))->find();
+        switch ($res['product_type']) {
+            case '2':
+                $res['product_type']='旅游摄影';
+                break;
+            case '3':
+                $res['product_type']='旅游项目';
+                break;
+            case '4':
+                $res['product_type']='健身器材';
+                break;
+            case '5':
+                $res['product_type']='生活用品';
+                break;
+            default:
+                # code...
+                break;
+        }
+        $img = explode(',', $res['images']);
+        $this->assign('img',$img);
+        $this->assign('info',$res);
+        $this->assign('type',$type);
+        $this->display();
+    }
+    //执行审核方法
+    public function approval()
+    {
+       $style = I('style');
+       $type = I('type');
+       $product_id = I('product_id');
+       switch ($style) {
+           case '1':
+               if ($type==2) {
+                  $status = 3;
+               }elseif ($type==3) {
+                   $status = 4;
+               }elseif ($type==4) {
+                   $status = 1;
+               }
+               break;
+           case '2':
+               $status = 5;
+               break;
+
+           default:
+               # code...
+               break;
+       }
+       $res = M('product')->where(array('product_id'=>$product_id))->save(array('status'=>$status));
+       if ($res) {
+            $this->success('操作成功', 'review');
+        }else{
+            $this->error('操作失败');
         }
     }
 }
