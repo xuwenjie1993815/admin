@@ -50,19 +50,22 @@ class IndexController extends \Base\Controller\BaseController
         $menuModel->setRelationCondition('node','ismenu=1');
         $data=$menuModel->field('id,pid,name as text,url')->order('sort asc')->relation(true)->select();
         //处理菜单显示
-          
-        $nodeid = M('role_node')->field('nodeid')->where(array('roleid' => $_SESSION['adminInfo']['role_id']))->select();  
-        // foreach ($_SESSION['adminAccess'] as $key => $value) {
-        //     $aa[] = substr($value,strpos($value,'e/')+2);
-        // }
-        foreach ($nodeid as $key => $value) {
-            $n_nodeid[] = M('node')->where(array('id' => $value['nodeid']))->getfield('groupid');
+        if ($_SESSION['adminInfo']['role_id'] != '0') { 
+            $nodeid = M('role_node')->field('nodeid')->where(array('roleid' => $_SESSION['adminInfo']['role_id']))->select();  
+            // foreach ($_SESSION['adminAccess'] as $key => $value) {
+            //     $aa[] = substr($value,strpos($value,'e/')+2);
+            // }
+            foreach ($nodeid as $key => $value) {
+                $n_nodeid[] = M('node')->where(array('id' => $value['nodeid']))->getfield('groupid');
+            }
         }
         foreach($data as $key=>$val)
         {
-            if (!in_array($val['id'], $n_nodeid)) {
-                unset($data[$key]);
-                continue;
+            if ($_SESSION['adminInfo']['role_id'] != '0') {
+                if (!in_array($val['id'], $n_nodeid)) {
+                    unset($data[$key]);
+                    continue;
+                }
             }
             foreach($val['node'] as $k=>$v)
             {
