@@ -230,6 +230,7 @@ class ProductController extends \Think\Controller
     public function review()
     {
        $type = I('type')?I('type'):2;
+       cookie('type',$type);
        $goods = M('product');
        $count = $goods->where(array('status'=>$type))->count();
         $Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数

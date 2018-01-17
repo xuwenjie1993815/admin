@@ -18,9 +18,9 @@
                 </div>
             </form>
             <div class='state'>
-                <span class='type'><a href="review?type=2">待审核</a></span> 
-                <span class='type'><a href="review?type=3">待复核</a></span> 
-                <span class='type'><a href="review?type=4">确认上架</a></span>
+                <span class='type'><a href="review?type=2" class='2'>待审核</a></span> 
+                <span class='type'><a href="review?type=3" class='3'>待复核</a></span> 
+                <span class='type'><a href="review?type=4" class='4'>确认上架</a></span>
             </div>
             
             <div class="table-margin ">
@@ -56,7 +56,7 @@
                                 <eq name="item.status" value="1" >
                                     <td><span class="text-green">已启用</span></td>
                                     <else/>
-                                    <td><span class="text-red">待审核</span></td>
+                                    <td><span class="text-red">待处理</span></td>
                                 </eq>
                                 <td>
                                     <!-- <img src="__PUBLIC__/admin/img/z.png" class='del' alt="{$item.product_id}" title="删除">&nbsp;&nbsp; -->
@@ -82,41 +82,26 @@
     }
     .type a{
         margin-left: 100px;
-        color: #f60 !important;
+        color: black;
+    }
+    .active{
+         color: #f60 !important;
     }
     </style>
     <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-            $('.del').click(function(event) {
-                var target_id = $(this).attr("alt");
-                layer.confirm('确认要删除吗？', {
-                        btn : [ '确定', '取消' ]//按钮
-                    }, function(index) {
-                        layer.close(index);
-                         $.ajax({
-                                url: "delProduct",
-                                type: "POST",
-                                data: {
-                                    product_id:target_id
-                                },
-                                success:function(data){
-                                    if (data.code==0) {
-                                        layer.open({
-                                            content:"删除成功"
-                                        });
-                                        $("#tae_"+target_id).remove();
-                                    }else{
-                                        layer.open({
-                                            content:"删除失败"
-                                        });
-                                    }
-                               },
-                       });
-                    }); 
-                event.stopPropagation();
-               
-            });
+           var type =  getCookie('type');
+           $("."+type).addClass('active');
+     function getCookie(name)
+      {
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+        return unescape(arr[2]);
+        else
+        return null;
+     }
+       
     </script>>
 
 </block>
