@@ -18,8 +18,10 @@ class ActivityController extends \Base\Controller\BaseController
 
         $activity_list = M('activity')->alias('a')->join($join)->field('a.*,ad.nick_name')->where($where)->order('a.ctime desc')->select();
         // var_dump($activity_list);die;
-        // foreach ($activity_list as $key => $value) {
-        // }
+        foreach ($activity_list as $k => $v) {
+        	$activity_list[$k]['images'] = explode(',', $v['images']);
+        }
+        //var_dump($activity_list);die;
         $this->assign('list',$activity_list);
 		$this->display();
 	}
@@ -57,7 +59,7 @@ class ActivityController extends \Base\Controller\BaseController
 		$data['like_price'] = $_POST['like_price'];
 		$data['like_info'] = $_POST['like_info'];
 		$data['activity_type'] = $_POST['activity_type'];
-		$data['activity_info'] = $_POST['activity_info'];
+		$data['activity_info'] = strip_tags($_POST['activity_info']);
 		$data['shop_id'] = $_SESSION['adminInfo']['id'];
 		$data['ctime'] = time();
 		M('activity')->add($data);
