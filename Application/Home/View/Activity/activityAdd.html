@@ -20,7 +20,7 @@
                                 </div>
 
                                 
-                               
+
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">目标人数</label>
                                     <input type="number" class="form-control"  name='target_num' id='target_num'>
@@ -28,16 +28,16 @@
 
                                 <div class="form-group">
                                 <label for="exampleInputPassword1">截止时间</label>
-                                <input type="text" onfocus="WdatePicker()" id="stop_time" name="stop_time" value="{$_GET['stop_time']}" class="input-text Wdate" placeholder="截止时间" style="width:120px;">
+                                <input type="text" onfocus="WdatePicker({dateFmt:'yyyyMMdd HH:mm:ss'})" id="stop_time" name="stop_time" value="{$_GET['stop_time']}" class="input-text Wdate" placeholder="截止时间" style="width:120px;">
                                 </div>
 
 	                              <div class="form-group">
 	                                  <label for="exampleInputPassword1">参与活动价格</label>
-	                                  <input type="number" class="form-control"  name='price' id='price'>
+	                                  <input type="text" class="form-control"  name='price' id='price'>
 	                              </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">活动点赞价格</label>
-                                    <input type="number" class="form-control"  name='like_price' id='like_price'>
+                                    <input type="text" class="form-control"  name='like_price' id='like_price'>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">点赞介绍</label>
