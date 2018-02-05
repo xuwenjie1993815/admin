@@ -55,7 +55,15 @@ class RaffleController extends \Think\Controller
 		}
 		$like = ($begin+$end)%$info['target_num'];
 		$winCode = 10000001+$like;//中奖码 10000025
+		//$winCode='10000025';
 		$winUser = M('order')->field('user_id,order_id')->where(array('period_time'=>$period_time,'order_product_id'=>$product_id,'lottery_code'=>array("like","%$winCode%")))->select();
+		if (!$winUser) {
+			$data = array(
+                'code'=>1,
+                'msg'=>'抽奖失败,无人中奖',
+                );
+           $this->ajaxReturn($data);
+		}
 		foreach ($winUser as $k => $v) {
 			$winUser[$k]['period_id'] = $period_id;
 			$winUser[$k]['ctime'] = time();
@@ -64,9 +72,30 @@ class RaffleController extends \Think\Controller
 			$winUser[$k]['shop_address'] = '永川文理学院北门';
 			$winUser[$k]['win_type'] = '1';
 			$order_id[] = $v['order_id'];
+			//$user_id_arr[] = $v['user_id'];
 		}
+		
 		if ($winUser) {
 			$win = M('reward')->addAll($winUser);
+			//添加通知
+			$product_name = M('product')->field('product_name')->where(array('product_id'=>$info['p_id']))->find();
+			foreach ($winUser as $k => $v) {
+				unset($winUser[$k]['period_id']);
+				unset($winUser[$k]['ctime']);
+				unset($winUser[$k]['reward_number']);
+				unset($winUser[$k]['shop_name']);
+				unset($winUser[$k]['shop_address']);
+				unset($winUser[$k]['win_type']);
+				unset($winUser[$k]['order_id']);
+				$winUser[$k]['notice_title'] = '商品中奖';
+				$winUser[$k]['content'] = '恭喜您购买的'.$product_name['product_name'].'第'.$info['period_time'].'期中奖了';
+				$winUser[$k]['type'] = '1';
+				$winUser[$k]['shop_id'] = $info['shop_id'];
+				$winUser[$k]['add_time'] = time();
+			}
+			//var_dump($winUser);die;
+			//$notice_arr = 
+			$notice = M('notice')->addAll($winUser);
 		}
 		//修改期数的状态
 		$res =M('period')->where(array('period_id'=>$period_id))->save(array('status_period'=>2));
@@ -127,7 +156,15 @@ class RaffleController extends \Think\Controller
 		}
 		$like = ($begin+$end)%$info['target_num'];
 		$winCode = 10000001+$like;//中奖码 10000025
+		//$winCode='10000025';
 		$winUser = M('order')->field('user_id,order_id')->where(array('activity_id'=>$activity_id,'order_type'=>2,'lottery_code'=>array("like","%$winCode%")))->select();
+		if (!$winUser) {
+			$data = array(
+                'code'=>1,
+                'msg'=>'抽奖失败,无人中奖',
+                );
+           $this->ajaxReturn($data);
+		}
 		foreach ($winUser as $k => $v) {
 			$winUser[$k]['period_id'] = $activity_id;
 			$winUser[$k]['ctime'] = time();
@@ -139,6 +176,24 @@ class RaffleController extends \Think\Controller
 		}
 		if ($winUser) {
 			$win = M('reward')->addAll($winUser);
+			//添加通知
+			foreach ($winUser as $k => $v) {
+				unset($winUser[$k]['period_id']);
+				unset($winUser[$k]['ctime']);
+				unset($winUser[$k]['reward_number']);
+				unset($winUser[$k]['shop_name']);
+				unset($winUser[$k]['shop_address']);
+				unset($winUser[$k]['win_type']);
+				unset($winUser[$k]['order_id']);
+				$winUser[$k]['notice_title'] = '活动中奖';
+				$winUser[$k]['content'] = '恭喜您参加的'.$info['activity_name'].'中奖了';
+				$winUser[$k]['type'] = '1';
+				$winUser[$k]['shop_id'] = $info['shop_id'];
+				$winUser[$k]['add_time'] = time();
+			}
+			//var_dump($winUser);die;
+			//$notice_arr = 
+			$notice = M('notice')->addAll($winUser);
 		}
 		//if ($win) {
 			//修改期数的状态
@@ -192,7 +247,7 @@ class RaffleController extends \Think\Controller
 	public function likeDraw_run()
 	{
 		$apply_id = I('apply_id');
-		$res = M('apply')->field('like_userid')->where(array('apply_id'=>$apply_id))->find();
+		$res = M('apply')->field('like_userid,activity_id')->where(array('apply_id'=>$apply_id))->find();
 		$len = strlen($res['like_userid'])-2;
 		$user_id=  substr($res['like_userid'], 1,$len);
 		$arr_userid = explode(',', $user_id);
@@ -202,7 +257,7 @@ class RaffleController extends \Think\Controller
 		$winCode = 10000001+rand(10,99);//没用
 		$order_id = M('order')->field('order_id')->where(array('user_id'=>$win_user,'apply_id'=>$apply_id))->find();
 		$winUser['user_id'] = $win_user;
-		$winUser['order_id'] = $order_id;
+		$winUser['order_id'] = $order_id['order_id'];
 		$winUser['period_id'] = $apply_id;
 		$winUser['ctime'] = time();
 		$winUser['reward_number'] = $winCode;
@@ -210,6 +265,15 @@ class RaffleController extends \Think\Controller
 		$winUser['shop_address'] = '永川文理学院北门';
 		$winUser['win_type'] = '2';
 		$win = M('reward')->add($winUser);
+		//添加通知
+		$info = M('activity')->where(array('activity_id'=>$res['activity_id']))->find();
+		$arr_not['user_id'] = $win_user;
+		$arr_not['notice_title'] = '点赞中奖';
+		$arr_not['content'] = '恭喜您点赞的'.$info['activity_name'].'中奖了';
+		$arr_not['type'] = '1';
+		$arr_not['shop_id'] = $info['shop_id'];
+		$arr_not['add_time'] = time();
+		$notice = M('notice')->add($arr_not);
 		if ($win) {
 			//修改期数的状态
 			$res =M('apply')->where(array('apply_id'=>$apply_id))->save(array('is_draw'=>2));
