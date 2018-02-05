@@ -80,23 +80,41 @@ class NoticeController extends \Base\Controller\BaseController
        	$data['msg'] = '内容必填';
 		$this->error($data['msg']);
     	}
+
+        
+        $data['shop_id'] = $_SESSION['adminInfo']['id'];
+        //权限判断
+        $data['notice_title'] = $_POST['notice_title'];
+        $data['content'] = $_POST['content'];
+        $data['type'] = $_POST['type'];
+        $data['add_time'] = time();
     	//指定用户
     	if ($_POST['user_tel']) {
-    		$user_info = M('user')->where(array('tel' => $_POST['user_tel'],'status' => '1'))->find();
-    		if (!$user_info) {
-    			$data['msg'] = '指定发送用户不存在或已注销';
-				$this->error($data['msg']);
-    		}
-			$data['user_id'] = $user_info['user_id'];
+            //判断多个用户
+            if (count(explode(',',$_POST['user_tel'])) > 1) {
+                foreach (explode(',',$_POST['user_tel']) as $key => $value) {
+                    $user_info = '';
+                    $user_info = M('user')->where(array('tel' => $value,'status' => '1'))->find();
+                    // if (!$user_info) {
+                    //     $data['msg'] = '指定发送用户不存在或已注销';
+                    //     $this->error($data['msg']);
+                    // }
+                    $data['user_id'] = $user_info['user_id'];
+                    $res = M('notice')->add($data);
+                }
+            }else{
+                $user_info = M('user')->where(array('tel' => $_POST['user_tel'],'status' => '1'))->find();
+                if (!$user_info) {
+                    $data['msg'] = '指定发送用户不存在或已注销';
+                    $this->error($data['msg']);
+                }
+                $data['user_id'] = $user_info['user_id'];
+                $res = M('notice')->add($data);
+            }
+    		
     	}
 
-		$data['shop_id'] = $_SESSION['adminInfo']['id'];
-		//权限判断
-		$data['notice_title'] = $_POST['notice_title'];
-		$data['content'] = $_POST['content'];
-		$data['type'] = $_POST['type'];
-		$data['add_time'] = time();
-		$res = M('notice')->add($data);
+		
 		if ($res) {
 			$this->success('新增成功', 'noticeList');
 		}else{
