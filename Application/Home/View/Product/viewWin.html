@@ -1,0 +1,52 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+            <form role="form" method="POST">
+                <div class="search_style table-margin">
+                    <div class="title_names text-blue">商品期数列表</div>
+                    <ul class="search_content clearfix">
+                        <!-- <li class='w30'>
+                            <input type="text" placeholder="商品名字" value="{$product_name}" class="w100 height34 border" id="product_name" name='product_name'>
+                        </li>
+                        <li class=''><button type="submit" class="btn btn-success" id="" name="">搜索</button></li> -->
+                        <!-- <li class=''><button class="btn_search button bg-blue" id="search"><i class="fa fa-search"></i> 搜索</button></li> -->
+                        <!-- <li class=''><a href="#"><button class="btn_search button bg-orange">刷新</button></a></li> -->
+                    </ul>
+                </div>
+            </form>
+            <div class="table-margin ">
+                <notempty  name="list">
+                    <table class="table table-hover">
+                        <tr class="table-header border">
+                            <th class="w10">幸运者电话</th>
+                            <th class="w10">中奖订单</th>
+                            <th class="w10">中奖码</th>
+                            <th class="w15">创建时间</th>
+                        </tr>
+
+                        <tbody id="itemContainer">
+                        <volist name="list" id="item">
+                            <tr class="list">
+                                <td>{$item.tel}</td>
+                                <td>{$item.order_id}</td>
+                                <td>{$item.reward_number}</td>
+                                <td>{$item.ctime|date='Y-m-d H:i', ###}</td>
+                            </tr>
+                        </volist>
+                        </tbody>
+
+                    </table>
+                    <else/>
+                    <div style="text-align:center"><span style="color:#CCCCCC;font-size:18px">没有符合条件的记录</span></div>
+                </notempty >
+            </div>
+            <!-- fpage -->
+            <div class="page" style="text-align:center">{$page}</div>
+        </div>
+    </div>
+
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+
+</block>
+

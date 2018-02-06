@@ -64,7 +64,9 @@
                                 <td>
                                     <img src="__PUBLIC__/admin/img/z.png" class='del' alt="{$item.product_id}" title="删除">&nbsp;&nbsp;
                                     <a href="{:U("Product/productEditor")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji' title="修改"></a>&nbsp;&nbsp;
-                                    <a href="{:U("Product/productPeriod")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/jia.png" class='jia' title="添加期次"></a>
+                                    <a href="{:U("Product/productPeriod")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/jia.png" class='jia' title="添加期数"></a>&nbsp;&nbsp;
+                                    <a href="{:U("Product/periodList")}?product_id={$item.product_id}"><img src="__PUBLIC__/admin/img/bianji.png" class='bianji' title="查看期数"></a>
+
                                 </td>
                             </tr>
                         </volist>

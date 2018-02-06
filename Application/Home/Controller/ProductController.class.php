@@ -331,4 +331,22 @@ class ProductController extends \Think\Controller
             $this->error('操作失败');
         }
     }
+    //商品期次列表
+    public function periodList()
+    {
+       $product_id = I('product_id');
+       $product_id = addslashes($product_id);
+       $res = M('period')->where(array('p_id'=>$product_id))->select();
+       $this->assign('list',$res);
+       $this->display();
+    }
+    //查看中奖信息
+    public function viewWin()
+    {
+      $period_id = I('period_id');
+      $period_id = addslashes($period_id);
+      $res = M('reward')->alias('a')->field('a.order_id,a.ctime,reward_number,b.tel')->join('left join hyz_user as b on a.user_id=b.user_id')->where(array('period_id'=>$period_id))->select();
+      $this->assign('list',$res);
+      $this->display();
+    }
 }
