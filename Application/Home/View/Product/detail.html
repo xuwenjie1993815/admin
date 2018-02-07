@@ -39,8 +39,12 @@
                                   </div>
                                   <input style="cursor: pointer;outline: none;" type="hidden" name="product_id" id="user-name" value="{$info.product_id}">
                                   <div class='zhixing'>
-                                  <a href="{:U("Product/approval")}?product_id={$info.product_id}&type={$type}&style=1"><button class="btn btn-primary">通过</button></a>
-                                  <a href="{:U("Product/approval")}?product_id={$info.product_id}&type={$type}&style=2"><button class="btn btn-primary">拒绝</button></a>
+                                  <!-- <a href="{:U("Product/approval")}?product_id={$info.product_id}&type={$type}&style=1"><button class="btn btn-primary">通过</button></a>
+                                  <a href="{:U("Product/approval")}?product_id={$info.product_id}&type={$type}&style=2"><button class="btn btn-primary">拒绝</button></a> -->
+                                  <span style="display:none" id='product_id'>{$info.product_id}</span>
+                                  <span style="display:none" id='dtype'>{$type}</span>
+                                  <button class="btn btn-primary" id='tg'>通过</button>
+                                  <button class="btn btn-primary" id='jj'>拒绝</button>
                                   </div>
                               <!-- </form> -->
 
@@ -57,9 +61,73 @@
     <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-
-        
-    </script>>
+    var product_id = $("#product_id").text();
+        dtype = $("#dtype").text();
+    $('#tg').click(function(event) {
+                layer.confirm('确认通过吗？', {
+                        btn : [ '确定', '取消' ]//按钮
+                    }, function(index) {
+                        layer.close(index);
+                         $.ajax({
+                                url: "approval",
+                                type: "POST",
+                                data: {
+                                    product_id:product_id,
+                                    type:dtype,
+                                    style:1,
+                                },
+                                success:function(data){
+                                    if (data.code==0) {
+                                        layer.open({
+                                            content:"审核成功"
+                                        });
+                                        setTimeout(function(){
+                                          window.location.href="review";
+                                        },1000);
+                                    }else{
+                                        layer.open({
+                                            content:"审核失败"
+                                        });
+                                    }
+                               },
+                       });
+                    }); 
+                event.stopPropagation();
+               
+            });
+        $('#jj').click(function(event) {
+                layer.confirm('确认通过吗？', {
+                        btn : [ '确定', '取消' ]//按钮
+                    }, function(index) {
+                        layer.close(index);
+                         $.ajax({
+                                url: "approval",
+                                type: "POST",
+                                data: {
+                                    product_id:product_id,
+                                    type:dtype,
+                                    style:2,
+                                },
+                                success:function(data){
+                                    if (data.code==0) {
+                                        layer.open({
+                                            content:"审核成功"
+                                        });
+                                        setTimeout(function(){
+                                          window.location.href="review";
+                                        },1000);
+                                    }else{
+                                        layer.open({
+                                            content:"审核失败"
+                                        });
+                                    }
+                               },
+                       });
+                    }); 
+                event.stopPropagation();
+               
+            });
+    </script>
 
 </block>
 

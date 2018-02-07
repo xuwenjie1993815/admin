@@ -326,9 +326,19 @@ class ProductController extends \Think\Controller
        }
        $res = M('product')->where(array('product_id'=>$product_id))->save(array('status'=>$status));
        if ($res) {
-            $this->success('操作成功', 'review');
+            $data = array(
+                'code'=>0,
+                'msg'=>'审核成功',
+                );
+           $this->ajaxReturn($data);
+            //$this->success('操作成功', 'review');
         }else{
-            $this->error('操作失败');
+            $data = array(
+                'code'=>1,
+                'msg'=>'审核成功',
+                );
+           $this->ajaxReturn($data);
+            //$this->error('操作失败');
         }
     }
     //商品期次列表
