@@ -1,0 +1,220 @@
+<extend name="../../Home/View/Public/base" />
+<block name="page-content">
+    <div class="view-product">
+        <div class="info-center">
+                 <div class="col-lg-6">
+                      <section class="panel">
+                         <!--  <header class="panel-heading">
+                              Basic Forms
+                          </header> -->
+                          <div class="panel-body">
+                          <!-- 活动图片，标题，内容。参与价格，点赞价格，参与活动奖励，点赞活动奖励 -->
+                              <form role="form"  method="post" enctype="multipart/form-data" onSubmit="return beforeSubmit(this);">
+	                              <div class="form-group">
+	                                  <label for="exampleInputEmail1">姓名</label>
+	                                  <input type="text" class="form-control" name='name' id='name'>
+	                              </div>
+                                  <label for="exampleInputPassword1">性别</label>
+                                <select class="form-control input-lg m-bot15" name='sex'>
+                                    <option value='1'>男</option>
+                                    <option value='0'>女</option>
+                                </select>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">年龄</label>
+                                    <input type="number" class="form-control" name='age' id='age'>
+                                </div>
+
+	                              <div class="form-group">
+	                                  <label for="exampleInputPassword1">身份证号</label>
+	                                  <input type="number" class="form-control"  name='card' id='card'>
+	                              </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">联系电话</label>
+                                    <input type="number" class="form-control"  name='phone' id='phone'>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">单位</label>
+                                    <input type="text" class="form-control"  name='company' id='company'>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">职位</label>
+                                    <input type="text" class="form-control" name='job' id='job'>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">地址</label>
+                                    <input type="text" class="form-control"  name='address' id='address'>
+                                </div>
+          						        <div class="form-group">
+          						        	<label for="exampleInputPassword1">参赛详情</label>
+          						        	<input type="text" class="form-control" name='other_info' id='other_info'>
+          						        </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">点赞价格</label>
+                                <input type="number" class="form-control" name='apply_price' id='apply_price'>
+                              </div>
+                                  <input type="submit" class="btn btn-primary" value='提交'>
+                              </form>
+                          </div>
+                      </section>
+                  </div>
+        </div>
+    </div>
+	<!--_footer 作为公共模版分离出去-->
+
+	<include file="Public/footer"/>
+  <style type="text/css">
+  .preview{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-right: 20px;
+  }
+  .add_pic img{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+  }
+  .add_pic input[type="file"]{
+     width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    z-index: 999;
+    opacity: 0;
+  }
+  .pic{
+    position: absolute;
+    top:0px;
+    left: 0px;
+  }
+  .del_pic1{
+    position: absolute;
+    z-index: 999;
+    right: -8px;
+    top:-8px;
+  }
+  .btn-primary{
+    position: absolute;
+    margin-top: 120px;
+  }
+</style>
+    <script type="text/javascript" src="__PUBLIC__/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+	<!-- 实例化编辑器 -->
+
+    <script type="text/javascript">
+        function beforeSubmit(form){
+            if($("#name").val()==''){
+            alert('姓名不能为空！');
+            return false;
+            }
+            if($("#age").val()==''){
+            alert('请填写年龄');
+            return false;
+            }
+            if($("#card").val()==''){
+            alert('请填写身份证');
+            return false;
+            }
+            if($("#phone").val()==''){
+            alert('请填写手机号');
+            return false;
+            }
+            if($("#apply_price").val()==''){
+            alert('请填写点赞价格');
+            return false;
+            }
+            if($("#other_info").val()==''){
+            alert('请填写参数');
+            return false;
+            }
+        }
+        function preview1(file){
+        var fileText=$(file).val();
+         if(fileText==""){
+            return false;
+        }
+        if(!/.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)$/.test(fileText)){  
+            layer.open({
+                closeBtn:0,
+                type:0,
+                content:"图片类型必须是gif,jpeg,jpg,png中的一种",
+                // success:function (layer){
+                //     $(".layui-layer-content").css({"height":"110px","padding-top":"40px"})
+                // }
+            })
+            $(file).val('');
+            return false;
+        }
+            p2 = 1;
+            if (file.files && file.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(evt){
+                    var prevDiv =
+                        '<div>'+
+                        '<img  style="width:120px;height:120px" class="pic" src="' + evt.target.result + '" />'+
+                        '<img class="del_pic1" src="__PUBLIC__/admin/img/delete.png" onclick="del_pic1(this)" alt="">'+
+                        '</div>';
+                    $(file).parent().parent().append(prevDiv);
+                    var timestamp = Date.parse(new Date());
+                     if($(".prev").length<4){
+                        var str =
+                            '<div class="preview prev">'+
+                            '<div class="add_pic">'+
+                            '<input type="file" name="file'+timestamp+'" onchange="preview1(this)"/>'+
+                            '<img src="__PUBLIC__/admin/img/jia_pic.png" alt="">'+
+                            '</div>'+
+                            '</div>';
+                        $(".license1").append(str);
+                    }
+                };
+                reader.readAsDataURL(file.files[0]);
+            }else{
+                prevDiv.innerHTML = '<div class="img" src=file.value></div>';
+            }
+    }
+    function del_pic1(obj){
+            $(obj).parent().parent().remove()
+            if($(".prev").length == 1){
+                p2 = 0;
+            }
+             var piclen=$(".pic").length;
+             if(piclen==0){
+                $(".prev").remove();
+                     var str =
+                    '<div class="preview prev">'+
+                    '<div class="add_pic">'+
+                    '<input  type="file" name="images" onchange="preview1(this)"/>'+
+                    '<img src="__PUBLIC__/admin/img/jia_pic.png" alt="">'+
+                    '</div>'+
+                    '</div>';
+                $(".license1").append(str)
+                console.log($(".prev").length)
+            }
+            //如果只存在一个图片时，添加一个加号
+            if(piclen==3){
+                     var str =
+                    '<div class="preview prev">'+
+                    '<div class="add_pic">'+
+                    '<input  type="file" name="images" onchange="preview1(this)"/>'+
+                    '<img src="__PUBLIC__/admin/img/jia_pic.png" alt="">'+
+                    '</div>'+
+                    '</div>';
+                $(".license1").append(str)
+                console.log($(".prev").length)
+            }
+        }
+    </script>
+<script type="text/javascript">
+    // var editor = UE.getEditor('container');
+    var editor = new UE.ui.Editor({initialFrameHeight:400,initialFrameWidth:750});
+    editor.render("activity_info");
+</script>
+</block>
+

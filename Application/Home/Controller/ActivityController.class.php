@@ -87,4 +87,28 @@ class ActivityController extends \Base\Controller\BaseController
        		$this->error($data['msg']);
 		}
 	}
+
+	//后台添加节目
+	public function ac_add(){
+		if ($_POST) {
+			$data['activity_id'] = I('activity_id');
+			$data['apply_real_name'] = I('name');
+			$data['sex'] = I('sex');
+			$data['age'] = I('age');
+			$data['id_card_no'] = I('card');
+			$data['tel'] = I('phone');
+			$data['company'] = I('company');
+			$data['address'] = I('address');
+			$data['job'] = I('job');
+			$data['ctime'] = time();
+			$data['apply_status'] = '1';
+			$data['address'] = I('address');
+			$data['apply_price'] = I('apply_price');
+			$data['other_info'] = I('other_info');
+			M('apply')->add($data);
+			$this->success('添加成功', 'activityList');
+		}else{
+			$this->display();
+		}
+	}
 }
