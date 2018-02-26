@@ -69,6 +69,7 @@
                                     <if condition="$item['status'] eq 1">
                                         <a title="删除" href="javascript:;" onclick="system_category_del(this,{$item.activity_id})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
                                     </if>
+                                    <span class="l"> <a href="javascript:;" onclick="ac_add('添加节目','{:U("activity/ac_add")}')" class="btn btn-primary radius"> 添加节目</a></span> <span class="r">{$list.page}</span>
                                 </td>
                             </tr>
                         </volist>
@@ -98,6 +99,16 @@
     }
     /*公告-发布*/
     function notice_add(title,url){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+
+    /*添加节目*/
+    function ac_add(title,url){
         var index = layer.open({
             type: 2,
             title: title,

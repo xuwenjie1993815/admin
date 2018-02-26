@@ -12,6 +12,8 @@ class OrderController extends \Base\Controller\BaseController
 		$role_id = $_SESSION['adminInfo']['role_id'];
 		$order_status = $_POST['order_status'];
 		$order_sn = $_POST['order_sn'];
+        $tel = $_POST['tel'];
+        $user_id = M('user')->where(array('tel' => $tel))->getfield('user_id');
         //有三种类型的商品  商品抽奖订单（关联product period order）  活动抽奖订单（apply order activity）  点赞抽奖订单（apply order activity）
         //商品抽奖订单
         $join_a = "hyz_product AS p ON o.order_product_id = p.product_id";
@@ -23,6 +25,9 @@ class OrderController extends \Base\Controller\BaseController
         if ($order_sn) {
         	$where['o.order_sn'] = $order_sn;
         }
+        if ($user_id) {
+            $where['o.user_id'] = $user_id;
+        }
         $where['pe.status_period'] = 1;
         $where['o.order_type'] = 1;//商品抽奖订单
         $res = M('order')->alias("o")->join($join_a)->join($join_b)->field('o.*, pe.* , p.product_name ,p.price ,p.product_info,p.images')->where($where)->order($order)->select();
@@ -30,6 +35,7 @@ class OrderController extends \Base\Controller\BaseController
         $data = array();
         foreach ($res as $k => $v){
             $data[$k]['order_id'] = $v['order_id'];//order_id
+            $data[$k]['tel'] = $v['tel'];//tel
             $data[$k]['order_sn'] = $v['order_sn'];//title
             $data[$k]['title'] = $v['period_name'];//title
             $data[$k]['product_name'] = $v['product_name'];
@@ -53,12 +59,16 @@ class OrderController extends \Base\Controller\BaseController
      	if ($order_sn) {
         	$where_apply['o.order_sn'] = $order_sn;
         }
+        if ($user_id) {
+            $where_apply['o.user_id'] = $user_id;
+        }
         $where_apply['o.order_type'] = 2;//参与活动订单
         $field_apply = 'o.*, ac.*,a.*';
         $res_apply = M('order')->alias("o")->join($join_a)->join($join_b)->field($field_apply)->where($where_apply)->order($order)->select();
         $data_apply = array();
         foreach ($res_apply as $k => $v){
             $data_apply[$k]['order_id'] = $v['order_id'];//order_id
+            $data_apply[$k]['tel'] = $v['tel'];//tel
             $data_apply[$k]['order_sn'] = $v['order_sn'];
             $data_apply[$k]['title'] = $v['activity_name'];//title
             $data_apply[$k]['product_name'] = $v['product_name'];
@@ -78,6 +88,7 @@ class OrderController extends \Base\Controller\BaseController
         $data_dz = array();
         foreach ($res_dz as $k => $v){
             $data_dz[$k]['order_id'] = $v['order_id'];//order_id
+            $data_dz[$k]['tel'] = $v['tel'];//tel
             $data_dz[$k]['order_sn'] = $v['order_sn'];
             $data_dz[$k]['title'] = $v['title'];//title
             $data_dz[$k]['product_name'] = $v['product_name'];
@@ -106,7 +117,7 @@ class OrderController extends \Base\Controller\BaseController
         			break;
         	}
         }
-        // var_dump($order_list);die;
+        $this->assign('tel',$tel);
         $this->assign('order_sn',$order_sn);
         $this->assign('list',$order_list)->display();
        	// var_dump($order_list);die;
