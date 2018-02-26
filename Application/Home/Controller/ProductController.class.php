@@ -74,6 +74,7 @@ class ProductController extends \Think\Controller
     {
         $name = I('name');
         $price = I('price');
+        $retail_price = I('retail_price');
         $info = I('info');
         $type = I('type');
         if (!$name) {
@@ -92,6 +93,7 @@ class ProductController extends \Think\Controller
         $data = array(
                 'product_name'=>$name,
                 'price'=>$price,
+                'retail_price'=>$retail_price,
                 'images'=>$path,
                 'status'=>2,
                 'ctime'=>time(),
