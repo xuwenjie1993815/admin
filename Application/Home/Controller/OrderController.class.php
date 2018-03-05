@@ -37,6 +37,12 @@ class OrderController extends \Base\Controller\BaseController
             $data[$k]['order_id'] = $v['order_id'];//order_id
             $data[$k]['tel'] = $v['tel'];//tel
             $data[$k]['order_sn'] = $v['order_sn'];//title
+
+            $data[$k]['province'] = $v['province'];//province
+            $data[$k]['city'] = $v['city'];//city
+            $data[$k]['county'] = $v['county'];//county
+            $data[$k]['address'] = $v['address'];//address
+
             $data[$k]['title'] = $v['period_name'];//title
             $data[$k]['product_name'] = $v['product_name'];
             $data[$k]['images'] = $v['images'];//商品图片
@@ -70,6 +76,10 @@ class OrderController extends \Base\Controller\BaseController
             $data_apply[$k]['order_id'] = $v['order_id'];//order_id
             $data_apply[$k]['tel'] = $v['tel'];//tel
             $data_apply[$k]['order_sn'] = $v['order_sn'];
+            $data_apply[$k]['province'] = $v['province'];//province
+            $data_apply[$k]['city'] = $v['city'];//city
+            $data_apply[$k]['county'] = $v['county'];//county
+            $data_apply[$k]['address'] = $v['address'];//address
             $data_apply[$k]['title'] = $v['activity_name'];//title
             $data_apply[$k]['product_name'] = $v['product_name'];
             $data_apply[$k]['images'] = $v['images'];//商品图片
@@ -90,6 +100,10 @@ class OrderController extends \Base\Controller\BaseController
             $data_dz[$k]['order_id'] = $v['order_id'];//order_id
             $data_dz[$k]['tel'] = $v['tel'];//tel
             $data_dz[$k]['order_sn'] = $v['order_sn'];
+            $data_dz[$k]['province'] = $v['province'];//province
+            $data_dz[$k]['city'] = $v['city'];//city
+            $data_dz[$k]['county'] = $v['county'];//county
+            $data_dz[$k]['address'] = $v['address'];//address
             $data_dz[$k]['title'] = $v['title'];//title
             $data_dz[$k]['product_name'] = $v['product_name'];
             $data_dz[$k]['images'] = $v['images'];//商品图片
@@ -160,6 +174,10 @@ class OrderController extends \Base\Controller\BaseController
         foreach ($res as $k => $v){
             $data[$k]['order_id'] = $v['order_id'];//order_id
             $data[$k]['order_sn'] = $v['order_sn'];//title
+            $data[$k]['province'] = $v['province'];//province
+            $data[$k]['city'] = $v['city'];//city
+            $data[$k]['county'] = $v['county'];//county
+            $data[$k]['address'] = $v['address'];//address
             $data[$k]['tel'] = $v['tel'];//tel
             $data[$k]['period_name'] = $v['period_name'];//title
             $data[$k]['title'] = $v['title'];//title
@@ -186,7 +204,7 @@ class OrderController extends \Base\Controller\BaseController
                     break;
             }
         }
-        // var_dump($data);
+        // var_dump($data);die;
         $this->assign('data',$data[0])->display();
     }
 
